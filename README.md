@@ -34,6 +34,7 @@ Building intelligent systems, scalable data solutions, and impactful software pr
 ![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
 ### Data Visualization
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
@@ -51,6 +52,9 @@ Building intelligent systems, scalable data solutions, and impactful software pr
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+
 
 ---
 ---
@@ -66,20 +70,7 @@ Building intelligent systems, scalable data solutions, and impactful software pr
 - Modern Data Lakehouse Project
 - ETL Pipelines
 - Data Analytics Dashboards
-
-### 💻 Software Development
-- Full Stack Web Applications
-- Automation Tools
-- Open Source Contributions
-
----
-
-## 💭 Philosophy
-
-> "Learn. Build. Share. Improve. Repeat."
-
-I believe the best way to learn technology is by building real-world projects and continuously improving through practice.
-
+  
 ---
 
 ## 🤝 Let's Connect
