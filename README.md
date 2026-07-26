@@ -23,9 +23,9 @@
 
 - [x] [`AI ReAct Assistant`](https://github.com/Sanskar1724) — Terminal-first AI agent with ReAct reasoning, tool calling, conversation memory, modular providers.
 - [x] [`Fine-Tuning LLMs`](https://github.com/Sanskar1724) — Full alignment pipeline: CPT → SFT → DPO → RLVR with GRPO. Hugging Face, PEFT, LoRA, TRL, PyTorch.
-- [ ] [`Mini Modern LLM`](https://github.com/Sanskar1724) — Decoder-only Transformer from scratch: RMSNorm, RoPE, GQA, SwiGLU, weight tying.
-- [ ] [`Databricks Lakehouse`](https://github.com/Sanskar1724) — ETL pipelines with Apache Spark, Delta Lake, medallion architecture.
-- [ ] [`Aarogya Setu Plus`](https://github.com/Sanskar1724) — AI healthcare platform: medicine assistant, WebRTC, Socket.IO, React + TypeScript.
+- [x] [`Mini Modern LLM`](https://github.com/Sanskar1724) — Decoder-only Transformer from scratch: RMSNorm, RoPE, GQA, SwiGLU, weight tying.
+- [x] [`Databricks Lakehouse`](https://github.com/Sanskar1724) — ETL pipelines with Apache Spark, Delta Lake, medallion architecture.
+- [x] [`Aarogya Setu Plus`](https://github.com/Sanskar1724) — AI healthcare platform: medicine assistant, WebRTC, Socket.IO, React + TypeScript.
 
 📍 India · Open to internship and collaboration opportunities.
 
