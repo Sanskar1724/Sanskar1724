@@ -19,14 +19,15 @@
 
 ---
 
-> **What I'm currently building**
+> ## 🚀 Currently Exploring
 
-- [x] [`AI ReAct Assistant`](https://github.com/Sanskar1724) — Terminal-first AI agent with ReAct reasoning, tool calling, conversation memory, modular providers.
-- [x] [`Fine-Tuning LLMs`](https://github.com/Sanskar1724) — Full alignment pipeline: CPT → SFT → DPO → RLVR with GRPO. Hugging Face, PEFT, LoRA, TRL, PyTorch.
-- [x] [`Mini Modern LLM`](https://github.com/Sanskar1724) — Decoder-only Transformer from scratch: RMSNorm, RoPE, GQA, SwiGLU, weight tying.
-- [x] [`Databricks Lakehouse`](https://github.com/Sanskar1724) — ETL pipelines with Apache Spark, Delta Lake, medallion architecture.
-- [x] [`Aarogya Setu Plus`](https://github.com/Sanskar1724) — AI healthcare platform: medicine assistant, WebRTC, Socket.IO, React + TypeScript.
-
+- 🏗️ Production AI Agent Architectures
+- 🤝 Multi-Agent Collaboration & Orchestration
+- 🏥 Large-Scale Healthcare Data Engineering
+- ☁️ Distributed Data Processing with Spark
+- 🧠 LLM Fine-Tuning & Alignment
+- ⚙️ AI System Design & Evaluation
+  
 📍 India · Open to internship and collaboration opportunities.
 
 ---
