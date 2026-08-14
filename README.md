@@ -82,6 +82,44 @@ Computer Engineering student focused on building practical AI systems for produc
 </p>
 
 ---
+## GitHub Dashboard
+
+<p align="center">
+  <a href="https://github.com/Sanskar1724">
+    <img
+      width="48%"
+      src="https://github-readme-stats-fast.vercel.app/api?username=Sanskar1724&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF88&text_color=C9D1D9&icon_color=00FF88&ring_color=00FF88"
+      alt="GitHub Stats"
+    />
+  </a>
+  <a href="https://github.com/Sanskar1724">
+    <img
+      width="48%"
+      src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Sanskar1724&layout=compact&langs_count=8&hide_border=true&bg_color=0D1117&title_color=00FF88&text_color=C9D1D9"
+      alt="Top Languages"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Sanskar1724">
+    <img
+      width="48%"
+      src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar1724&hide_border=true&background=0D1117&stroke=00FF88&ring=00FF88&fire=00FF88&currStreakNum=C9D1D9&sideNums=C9D1D9&currStreakLabel=00FF88&sideLabels=888888&dates=888888"
+      alt="GitHub Streak"
+    />
+  </a>
+  <a href="https://leetcode.com/u/IjxdheI4ij/">
+    <img
+      width="48%"
+      src="https://leetcard.jacoblin.cool/IjxdheI4ij?theme=dark&font=Inter&ext=activity&cache=86400"
+      alt="LeetCode Stats"
+    />
+  </a>
+</p>
+
+<br>
+---
 
 ## Tech Stack
 
@@ -147,17 +185,6 @@ Computer Engineering student focused on building practical AI systems for produc
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
----
-
-## GitHub Dashboard
-
-[<img align="left" width="390" alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=Sanskar1724&show_icons=true&hide_border=true&bg_color=00000000&title_color=00FF88&text_color=888888&icon_color=00FF88">](#)
-[<img align="right" width="390" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sanskar1724&hide_border=true&bg_color=00000000&title_color=00FF88&text_color=888888&layout=compact">](#)
-
-[<img align="left" width="390" alt="GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar1724&hide_border=true&background=00000000&stroke=00FF88&ring=00FF88&fire=00FF88&currStreakNum=888888&sideNums=888888&currStreakLabel=00FF88&sideLabels=888888">](#)
-[<img align="right" width="390" alt="LeetCode Stats" src="https://leetcard.jacoblin.cool/IjxdheI4ij?theme=dark&font=Inter&ext=activity&cache=86400">](https://leetcode.com/u/IjxdheI4ij/)
-
-<br clear="both">
 
 ---
 
