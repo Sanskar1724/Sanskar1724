@@ -2,35 +2,16 @@
 
 <img src="assets/image/Sunrise%20Tech%20Workspace%20Overlooking%20the%20City.jpg" width="100%" alt="Developer workspace overlooking a city at sunrise"/>
 
-<table>
-<tr>
-<td align="left" width="55%">
-<h1>Sanskar Chandawar</h1>
-<code>DATA ENGINEER</code>
-<code>AI PRODUCT BUILDER</code>
-</td>
-<td align="right" width="45%">
-<a href="https://github.com/Sanskar1724"><img src="https://img.shields.io/badge/GitHub-0b1424?style=for-the-badge&logo=github&logoColor=38bdf8" alt="GitHub"/></a><br/>
-<a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-0b1424?style=for-the-badge&logo=linkedin&logoColor=38bdf8" alt="LinkedIn"/></a>
-</td>
-</tr>
-</table>
+<p><strong>Sanskar Chandawar</strong><br/>
+Data Engineer · AI Product Builder</p>
 
-<table>
-<tr>
-<td><strong>INPUT</strong><br/><code>raw data</code> <code>real problems</code></td>
-<td><strong>BUILD</strong><br/><code>pipelines</code> <code>AI products</code></td>
-<td><strong>OUTPUT</strong><br/><code>useful interfaces</code> <code>reliable decisions</code></td>
-</tr>
-</table>
-
-<blockquote>
-I build data platforms and AI products from first input to useful interface.
-</blockquote>
+<p>I build data platforms and AI products from first input to useful interface.</p>
 
 <p>
-<a href="https://forgeaistudio.vercel.app"><img src="https://img.shields.io/badge/Forge_AI_Studio-0b1424?style=for-the-badge&logo=vercel&logoColor=38bdf8" alt="Forge AI Studio"/></a>
-<a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-0b1424?style=for-the-badge&logo=gmail&logoColor=38bdf8" alt="Email"/></a>
+  <a href="https://github.com/Sanskar1724">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/sanskar-chandawar">LinkedIn</a> ·
+  <a href="https://forgeaistudio.vercel.app">Forge AI Studio</a> ·
+  <a href="mailto:sanskarchandawar3@gmail.com">Email</a>
 </p>
 
 </div>
