@@ -8,48 +8,56 @@
 </p>
 
 <p align="center">
-  Computer Engineering student & AI Engineer · building production‑grade AI systems · India
+  Data Engineer | PySpark | Databricks | SQL | AI Engineering
 </p>
 
-<p align="center">
-  <a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://sanskarchandawar.lovable.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"></a>
-  <a href="https://github.com/Sanskar1724"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="https://leetcode.com/u/IjxdheI4ij/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"></a>
-  <a href="https://www.hackerrank.com/profile/sanskarchandawa1"><img src="https://img.shields.io/badge/HackerRank-00EA64?style=flat-square&logo=hackerrank&logoColor=black" alt="HackerRank"></a>
-</p>
-
----
+---  
 
 ## 👨‍💻 About
+Data Engineering professional building scalable lakehouse architectures on Databricks, PySpark, and Delta Lake. I design Bronze‑Silver‑Gold pipelines, enforce data governance with Unity Catalog, and deliver analytics‑ready datasets for BI and AI workloads. Secondary focus on AI/LLM engineering, including Retrieval‑Augmented Generation and prompt‑driven assistants.
 
-Computer Engineering student focused on building practical AI systems for production. Work spans LLM fine‑tuning, agentic AI, Transformers, backend engineering, and data pipelines.
+---  
+
+## 🛠️ Skills
+**Languages** – Python, SQL, PySpark, Bash  
+**Data Platform** – Databricks, Delta Lake, Unity Catalog, Apache Spark  
+**Cloud & Tooling** – AWS, Docker, GitHub Actions  
+**AI/ML** – PyTorch, Hugging Face, RAG, Prompt Engineering  
+
+---  
 
 ## 🚀 Featured Projects
 
-- **AI ReAct Assistant** – Terminal‑first AI assistant with ReAct reasoning, tool calling, conversation memory and modular provider architecture.
-- **Fine‑Tuning LLMs** – End‑to‑end pipeline: CPT → SFT → DPO → RLVR with GRPO using Hugging Face, PEFT, LoRA and PyTorch.
-- **Mini Modern LLM** – Decoder‑only Transformer from scratch: RMSNorm, RoPE, GQA, SwiGLU, weight tying.
+| Project | Description | Tech Stack | Links |
+|---|---|---|---|
+| **Retail Lakehouse with Databricks** | Medallion architecture (Bronze‑Silver‑Gold) on Databricks, PySpark ingestion, data cleansing, dimensional modeling, Unity Catalog governance, Delta Lake. | `Python`, `PySpark`, `Databricks`, `Delta Lake`, `Unity Catalog`, `Power BI` | [GitHub](https://github.com/Sanskar1724/Retail-Lakehouse-with-Databricks) |
+| **CampusOps** | AI‑powered academic assistant that unifies college email, timetable, notices and delivers a daily brief via chat, Telegram bot and email. FastAPI backend, PostgreSQL, React front‑end, RAG‑based answers. | `Python`, `FastAPI`, `PostgreSQL`, `React`, `TypeScript`, `Telegram API` | [GitHub](https://github.com/Sanskar1724/CampusOps) |
+| **FinSight AI** | Personal finance platform with intelligent budgeting, spending forecasts, savings goals and a context‑aware AI assistant (RAG). Built with React, TypeScript, Python FastAPI, PostgreSQL and a research evaluation framework. | `React`, `TypeScript`, `Python`, `FastAPI`, `PostgreSQL`, `RAG` | [GitHub](https://github.com/Sanskar1724/FinSight_AI) |
 
-## 🏆 GitHub Trophies
+---  
 
+## 📊 GitHub Stats
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Sanskar1724&theme=flat&no-frame=true&column=7&margin-w=15" width="95%" alt="GitHub Trophies">
+  <a href="https://github.com/Sanskar1724">
+    <img src="https://github-readme-stats.vercel.app/api?username=Sanskar1724&show_icons=true&theme=radical&count_private=false&hide=issues,prs" alt="GitHub Stats">
+  </a>
+  <a href="https://github.com/Sanskar1724">
+    <img src="https://github-contribution-grid-snake.vercel.app/api?username=Sanskar1724&custom_title=Contributions&date_format=M%20D%20Y&margin-w=4&column=8&line=true&reverse=true" alt="Contributions">
+  </a>
 </p>
 
-## 📫 Connect
+---  
 
+## 📫 Connect
 <p align="center">
   <a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
   <a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://sanskarchandawar.lovable.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"></a>
+  <a href="https://forgeaistudio.vercel.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"></a>
   <a href="https://github.com/Sanskar1724"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="https://www.hackerrank.com/profile/sanskarchandawa1"><img src="https://img.shields.io/badge/HackerRank-00EA64?style=flat-square&logo=hackerrank&logoColor=black" alt="HackerRank"></a>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Sanskar1724&style=flat-square&color=00FF88" alt="Profile Views">
+  <img src="https://komarev.com/ghpvc/?username=Sanskar1724&style=flat-square&color=00FF88" alt="Profile views">
 </p>
 
 <p align="center">
