@@ -17,8 +17,7 @@ def main() -> None:
     for filename, number, label in (
         ("h-projects.svg", "01", "SELECTED PROJECTS"),
         ("h-stack.svg", "02", "TECHNICAL STACK"),
-        ("h-writing.svg", "03", "TECHNICAL WRITING"),
-        ("h-activity.svg", "04", "ACTIVITY"),
+        ("h-activity.svg", "03", "ACTIVITY"),
     ):
         (ASSETS / filename).write_text(header(number, label), encoding="utf-8")
 
