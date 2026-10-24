@@ -1,101 +1,66 @@
-# Sanskar Chandawar
+<div align="center">
 
-## Data engineering systems, with an applied AI edge
+<img src="assets/hero.svg" width="100%" alt="Sanskar Chandawar, Data Engineer"/>
 
-I build data pipelines and software that turn messy inputs into reliable, usable
-systems. My primary focus is **data engineering**: PySpark, Databricks, Delta
-Lake, SQL, data quality, and lakehouse architecture. I also build AI/LLM
-applications where retrieval, validation, and deterministic fallbacks matter.
+<a href="https://forgeaistudio.vercel.app"><img src="https://img.shields.io/badge/Portfolio-0b1424?style=for-the-badge&logo=vercel&logoColor=38bdf8" alt="Portfolio"/></a>&nbsp;
+<a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-0b1424?style=for-the-badge&logo=linkedin&logoColor=38bdf8" alt="LinkedIn"/></a>&nbsp;
+<a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-0b1424?style=for-the-badge&logo=gmail&logoColor=38bdf8" alt="Email"/></a>&nbsp;
+<a href="https://github.com/Sanskar1724"><img src="https://img.shields.io/badge/GitHub-0b1424?style=for-the-badge&logo=github&logoColor=38bdf8" alt="GitHub"/></a>
 
-[GitHub](https://github.com/Sanskar1724) ·
-[LinkedIn](https://www.linkedin.com/in/sanskar-chandawar) ·
-[Portfolio](https://forgeaistudio.vercel.app) ·
-[Email](mailto:sanskarchandawar3@gmail.com)
+<br/><br/>
 
----
+I build data pipelines that make messy information trustworthy, and software that makes the result useful.
 
-## What I build
+<br/>
 
-### [Retail Lakehouse with Databricks](https://github.com/Sanskar1724/Retail-Lakehouse-with-Databricks)
+<img src="assets/intro.svg" width="100%" alt="Data engineering systems with an applied AI edge"/>
 
-A governed retail data platform that moves source data through a Bronze–Silver–Gold
-medallion architecture into analytics-ready datasets. Bronze preserves raw
-records and traceability; Silver applies cleansing, deduplication, type
-standardization, and business validation; Gold produces dimensional models,
-aggregates, and KPI tables for Power BI. The repository also documents
-metadata-driven ingestion, Databricks Jobs orchestration, Delta Lake guarantees,
-and Unity Catalog governance.
+</div>
 
-`PySpark` `Databricks` `Delta Lake` `Unity Catalog` `Databricks SQL` `Power BI`
+<br/>
 
-### [DataPilot](https://github.com/Sanskar1724/DataPilot)
+<img src="assets/h-projects.svg" width="100%" alt="Projects"/>
 
-An AI-assisted data quality pipeline for turning dirty CSV, JSON, JSONL, Excel,
-and Parquet files into cleaned datasets and auditable reports. Deterministic
-profiling and quality detectors inspect the data first; an LLM sees only schema,
-statistics, and issue summaries, then returns a Pydantic-validated fix plan.
-Execution is limited to a registered set of safe transformations, keeping data
-processing reproducible and separate from model reasoning.
+<table>
+<tr>
+<td width="50%"><a href="https://github.com/Sanskar1724/Retail-Lakehouse-with-Databricks"><img src="social/card-retail-lakehouse.svg" width="100%" alt="Retail Lakehouse with Databricks"/></a></td>
+<td width="50%"><a href="https://github.com/Sanskar1724/DataPilot"><img src="social/card-datapilot.svg" width="100%" alt="DataPilot"/></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/Sanskar1724/CampusOps"><img src="social/card-campusops.svg" width="100%" alt="CampusOps"/></a></td>
+<td width="50%"><a href="https://github.com/Sanskar1724/FinSight_AI"><img src="social/card-finsight.svg" width="100%" alt="FinSight AI"/></a></td>
+</tr>
+</table>
 
-`Python` `pandas` `DuckDB` `Pydantic` `Streamlit` `OpenRouter` `pytest`
+<p align="right"><a href="https://github.com/Sanskar1724"><b>All repositories and project documentation on GitHub &rarr;</b></a></p>
 
-### [CampusOps](https://github.com/Sanskar1724/CampusOps)
+<img src="assets/h-stack.svg" width="100%" alt="Stack"/>
 
-An academic operations assistant that consolidates college email, timetables,
-documents, deadlines, and reminders into a single conversational interface.
-Its Core Agent retrieves only the facts needed for each question, composes
-responses for the web, Telegram, and email channels, and falls back to a
-deterministic facts composer when the model is unavailable. The system includes
-hybrid document search, vision OCR, scheduled notifications, and a
-Postgres/pgvector deployment path.
+| | |
+|---|---|
+| **Data engineering** | PySpark Â· Apache Spark Â· Databricks Â· Delta Lake Â· Unity Catalog Â· SQL Â· data quality Â· dimensional modeling |
+| **Backend and code** | Python Â· FastAPI Â· SQLAlchemy Â· Pydantic Â· TypeScript Â· React Â· Next.js Â· REST APIs |
+| **AI applications** | RAG Â· hybrid search Â· OpenRouter Â· prompt design Â· grounded assistants Â· deterministic fallbacks |
+| **Cloud and operations** | PostgreSQL Â· SQLite Â· Docker Â· GitHub Actions Â· Power BI |
 
-`Python` `FastAPI` `Next.js` `TypeScript` `PostgreSQL` `pgvector` `Docker`
+<div align="center">
+<img src="https://skillicons.dev/icons?i=python,fastapi,ts,react,postgres,docker,githubactions&theme=dark" alt="Technology icons"/>
+</div>
 
-### [FinSight AI](https://github.com/Sanskar1724/FinSight_AI)
+<br/>
 
-A full-stack personal finance workspace built around a transaction ledger,
-budgets, goals, analytics, scenarios, reminders, and a grounded assistant.
-The FastAPI backend owns financial calculations and user-scoped data access,
-while the React client consumes a single API; the optional AI layer receives
-calculated context and evidence rather than inventing authoritative totals.
-The repository includes architecture, API, deployment, and research notes.
+<img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 
-`React` `TypeScript` `FastAPI` `SQLAlchemy` `SQLite` `PostgreSQL` `Pydantic`
+<div align="center">
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green-animate.svg"/>
+  <img alt="3D contribution graph" src="profile-3d-contrib/profile-night-rainbow.svg" width="100%"/>
+</picture>
 
-## Technical writing
+<br/>
 
-Selected project documentation:
+<sub>Open to conversations about data platforms, backend systems, and practical AI applications Â· <a href="mailto:sanskarchandawar3@gmail.com">sanskarchandawar3@gmail.com</a></sub>
 
-- [DataPilot architecture](https://github.com/Sanskar1724/DataPilot/blob/main/docs/architecture.md)
-  — metadata-only AI analysis, validation boundaries, and deterministic execution.
-- [CampusOps agent design](https://github.com/Sanskar1724/CampusOps/blob/master/docs/AGENT.md)
-  — retrieval, composition, history, and resilient fallback behavior.
-- [FinSight architecture](https://github.com/Sanskar1724/FinSight_AI/blob/main/docs/ARCHITECTURE.md)
-  — frontend/backend boundaries, authentication, financial invariants, and grounded AI.
-- [FinSight research methodology](https://github.com/Sanskar1724/FinSight_AI/blob/main/docs/RESEARCH.md)
-  — reproducible baseline-versus-grounded evaluation.
-
----
-
-## Technical skills
-
-**Data engineering** — PySpark, Apache Spark, Databricks, Delta Lake, Unity
-Catalog, SQL, data quality, dimensional modeling, Power BI
-
-**Programming and backend** — Python, FastAPI, SQLAlchemy, Pydantic, REST APIs,
-TypeScript, React, Next.js
-
-**AI and systems** — RAG, OpenRouter, hybrid search, prompt design, Docker,
-GitHub Actions, PostgreSQL, SQLite
-
----
-
-## Contact
-
-For data platforms, backend systems, or practical AI applications:
-
-[sanskarchandawar3@gmail.com](mailto:sanskarchandawar3@gmail.com) ·
-[LinkedIn](https://www.linkedin.com/in/sanskar-chandawar) ·
-[forgeaistudio.vercel.app](https://forgeaistudio.vercel.app)
+</div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Sanskar Chandawar, Data Engineer">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#05080f"/><stop offset="1" stop-color="#0b1424"/></linearGradient><radialGradient id="glow"><stop stop-color="#38bdf8" stop-opacity=".5"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="340" rx="14" fill="url(#bg)"/><circle cx="950" cy="170" r="170" fill="url(#glow)" opacity=".35"/>
+<g fill="none" stroke="#38bdf8" stroke-opacity=".28"><ellipse cx="950" cy="170" rx="130" ry="42"/><ellipse cx="950" cy="170" rx="130" ry="80" transform="rotate(55 950 170)"/><ellipse cx="950" cy="170" rx="130" ry="80" transform="rotate(-55 950 170)"/></g>
+<circle cx="950" cy="170" r="17" fill="#38bdf8"/><g font-family="Segoe UI,Arial,sans-serif"><text x="70" y="145" font-size="54" font-weight="700" letter-spacing="3" fill="#e6edf3">SANSKAR CHANDAWAR</text><text x="72" y="190" font-size="17" letter-spacing="7" fill="#38bdf8">DATA ENGINEER</text><text x="72" y="228" font-family="monospace" font-size="15" fill="#8b949e">pipelines Â· lakehouses Â· data quality  /  India</text></g>
+</svg>
