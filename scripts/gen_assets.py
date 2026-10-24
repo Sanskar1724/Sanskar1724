@@ -47,64 +47,6 @@ def header(number: str, label: str) -> str:
     return svg(900, 56, label, body, style)
 
 
-def hero() -> str:
-    roles = ["Data Engineer", "AI Product Builder", "Agent Systems Developer"]
-    style = (
-        "@keyframes role{0%{opacity:0;transform:translateY(8px)}4%,29%{opacity:1;transform:none}"
-        "33%,100%{opacity:0;transform:translateY(-8px)}}"
-        ".r{opacity:0;animation:role 9s infinite}"
-        "@keyframes blink{50%{opacity:0}}.cur{animation:blink 1s step-end infinite}"
-        "@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,20px)}}"
-        ".o1{animation:float 9s ease-in-out infinite}.o2{animation:float 11s ease-in-out infinite reverse}"
-        "@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}"
-        ".p{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}"
-        "@keyframes flow{to{stroke-dashoffset:-40}}.e{stroke-dasharray:6 14;animation:flow 1.6s linear infinite}"
-        "@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}.n{animation:glow 3s ease-in-out infinite}"
-    )
-    role_svg = "".join(
-        f'<g class="r" style="animation-delay:{i * 3}s">'
-        f'<text x="72" y="186" font-family="{MONO}" font-size="21" fill="{INK}">{r}</text>'
-        f'<rect class="cur" x="{76 + len(r) * 12.6:.0f}" y="168" width="11" height="22" fill="{CYAN}"/></g>'
-        for i, r in enumerate(roles)
-    )
-    nodes = [(640, 110), (735, 70), (820, 140), (700, 205), (805, 245), (610, 255)]
-    edges = [(0, 1), (1, 2), (0, 3), (2, 3), (3, 4), (2, 4), (3, 5), (0, 5)]
-    edge_svg = "".join(
-        f'<path class="e" d="M{nodes[a][0]} {nodes[a][1]}L{nodes[b][0]} {nodes[b][1]}" '
-        f'stroke="{CYAN if i % 2 else VIOLET}" stroke-width="1.6" style="animation-delay:-{i * .3:.1f}s"/>'
-        for i, (a, b) in enumerate(edges)
-    )
-    node_svg = "".join(
-        f'<circle class="p" cx="{x}" cy="{y}" r="6" fill="none" stroke="{CYAN}" style="animation-delay:{i * .35:.2f}s"/>'
-        f'<circle class="n" cx="{x}" cy="{y}" r="6" fill="{CYAN if i % 2 else VIOLET}" style="animation-delay:{i * .5}s"/>'
-        for i, (x, y) in enumerate(nodes)
-    )
-    body = (
-        '<defs>'
-        f'<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050b16"/><stop offset="1" stop-color="#0c1830"/></linearGradient>'
-        f'<linearGradient id="name" x1="0" x2="1"><stop offset="0" stop-color="{INK}"/><stop offset="1" stop-color="{CYAN}"/></linearGradient>'
-        f'<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#12233a"/></pattern>'
-        '<filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="45"/></filter>'
-        '<clipPath id="clip"><rect width="900" height="320" rx="16"/></clipPath>'
-        '</defs>'
-        '<g clip-path="url(#clip)">'
-        '<rect width="900" height="320" fill="url(#bg)"/><rect width="900" height="320" fill="url(#grid)"/>'
-        f'<circle class="o1" cx="740" cy="90" r="110" fill="{CYAN}" opacity=".28" filter="url(#blur)"/>'
-        f'<circle class="o2" cx="820" cy="270" r="100" fill="{VIOLET}" opacity=".3" filter="url(#blur)"/>'
-        f'{edge_svg}{node_svg}'
-        '</g>'
-        f'<rect x=".5" y=".5" width="899" height="319" rx="16" fill="none" stroke="{LINE}"/>'
-        f'<text x="48" y="88" font-family="{MONO}" font-size="13" letter-spacing="3" fill="{CYAN}">HELLO, I\'M</text>'
-        f'<text x="46" y="140" font-family="{SANS}" font-size="46" font-weight="800" fill="url(#name)">Sanskar Chandawar</text>'
-        f'<text x="48" y="186" font-family="{MONO}" font-size="21" fill="{CYAN}">&gt;_</text>{role_svg}'
-        f'<text x="48" y="226" font-family="{SANS}" font-size="15" fill="{MUTED}">I build data platforms and AI products, from first input to useful interface.</text>'
-        f'<rect x="48" y="248" width="318" height="32" rx="16" fill="#0f2238" stroke="#1e3a5a"/>'
-        f'<circle class="p" cx="68" cy="264" r="5" fill="{GREEN}"/><circle cx="68" cy="264" r="5" fill="{GREEN}"/>'
-        f'<text x="84" y="269" font-family="{MONO}" font-size="13" fill="{INK}">now building · FORGE// + CampusOps</text>'
-    )
-    return svg(900, 320, "Sanskar Chandawar, Data Engineer and AI Product Builder", body, style)
-
-
 SKILLS = [
     ("AI PRODUCTS", "AI", VIOLET, ["RAG", "Agent workflows", "Hybrid search", "Grounded answers", "Prompt design", "LLM APIs"]),
     ("DATA ENGINEERING", "DB", CYAN, ["PySpark", "Databricks", "Delta Lake", "SQL", "Data quality", "Dimensional modeling"]),
@@ -235,7 +177,6 @@ def main() -> None:
         ("h-activity.svg", "03", "ACTIVITY"),
     ):
         (ASSETS / filename).write_text(header(number, label), encoding="utf-8")
-    (ASSETS / "hero.svg").write_text(hero(), encoding="utf-8")
     (ASSETS / "skills.svg").write_text(skills(), encoding="utf-8")
     (SOCIAL / "card-ai-product-studio.svg").write_text(card_studio(), encoding="utf-8")
     (SOCIAL / "card-campusops.svg").write_text(card_campus(), encoding="utf-8")

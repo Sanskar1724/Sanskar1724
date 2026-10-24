@@ -2,8 +2,6 @@
 
 <img src="assets/image/Sunrise%20Tech%20Workspace%20Overlooking%20the%20City.jpg" width="100%" alt="Developer workspace overlooking a city at sunrise"/>
 
-<img src="assets/hero.svg" width="100%" alt="Sanskar Chandawar — Data Engineer and AI Product Builder"/>
-
 <a href="https://forgeaistudio.vercel.app"><img src="https://img.shields.io/badge/Forge_AI_Studio-live-a78bfa?style=for-the-badge&labelColor=08111f" alt="Forge AI Studio"/></a>
 <a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-connect-38bdf8?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=08111f" alt="LinkedIn"/></a>
 <a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-say_hi-34d399?style=for-the-badge&logo=gmail&logoColor=white&labelColor=08111f" alt="Email"/></a>
