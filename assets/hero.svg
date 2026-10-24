@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Sanskar Chandawar, Data Engineer">
-<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#05080f"/><stop offset="1" stop-color="#0b1424"/></linearGradient><radialGradient id="glow"><stop stop-color="#38bdf8" stop-opacity=".5"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>
-<rect width="1200" height="340" rx="14" fill="url(#bg)"/><circle cx="950" cy="170" r="170" fill="url(#glow)" opacity=".35"/>
-<g fill="none" stroke="#38bdf8" stroke-opacity=".28"><ellipse cx="950" cy="170" rx="130" ry="42"/><ellipse cx="950" cy="170" rx="130" ry="80" transform="rotate(55 950 170)"/><ellipse cx="950" cy="170" rx="130" ry="80" transform="rotate(-55 950 170)"/></g>
-<circle cx="950" cy="170" r="17" fill="#38bdf8"/><g font-family="Segoe UI,Arial,sans-serif"><text x="70" y="145" font-size="54" font-weight="700" letter-spacing="3" fill="#e6edf3">SANSKAR CHANDAWAR</text><text x="72" y="190" font-size="17" letter-spacing="7" fill="#38bdf8">DATA ENGINEER</text><text x="72" y="228" font-family="monospace" font-size="15" fill="#8b949e">pipelines Â· lakehouses Â· data quality  /  India</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="Sanskar Chandawar, Data Engineer">
+<defs>
+<linearGradient id="bg" x2="0" y2="1"><stop stop-color="#060912"/><stop offset="1" stop-color="#101b2d"/></linearGradient>
+<linearGradient id="beam"><stop stop-color="#38bdf8" stop-opacity="0"/><stop offset=".5" stop-color="#38bdf8" stop-opacity=".8"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#38bdf8" stop-opacity=".28"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1200" height="380" rx="16" fill="url(#bg)"/>
+<ellipse cx="900" cy="260" rx="330" ry="150" fill="url(#glow)" filter="url(#blur)"/>
+<g stroke="#7dd3fc" stroke-opacity=".1"><path d="M0 300h1200M0 330h1200M0 360h1200"/><path d="M40 250l210 130M180 250l190 130M320 250l170 130M460 250l150 130M600 250l130 130M740 250l110 130M880 250l90 130M1020 250l70 130M1160 250l40 25"/></g>
+<g fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity=".55"><path d="M680 105h130v55h115v55h135"/><path d="M680 105v175h130v-65h115v75h135"/></g>
+<g fill="#38bdf8"><circle cx="680" cy="105" r="5"/><circle cx="810" cy="160" r="5"/><circle cx="925" cy="215" r="5"/><circle cx="1060" cy="215" r="5"/><circle cx="810" cy="280" r="5"/></g>
+<g font-family="monospace" font-size="12" fill="#7dd3fc"><text x="670" y="88">RAW</text><text x="795" y="145">CLEAN</text><text x="910" y="200">MODEL</text><text x="1040" y="200">INSIGHT</text></g>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="70" y="142" font-size="52" font-weight="700" letter-spacing="3" fill="#e6edf3">SANSKAR CHANDAWAR</text><text x="72" y="188" font-size="17" letter-spacing="7" fill="#38bdf8">DATA ENGINEER / BUILDER</text><text x="72" y="226" font-family="monospace" font-size="15" fill="#9aa7b7">lakehouses · pipelines · reliable AI  /  India</text></g>
+<rect x="70" y="258" width="420" height="2" fill="url(#beam)"/><text x="70" y="290" font-family="monospace" font-size="13" fill="#64748b">designing systems that turn raw data into useful decisions</text>
 </svg>

@@ -29,28 +29,32 @@ testable, and useful beyond a demo.</p>
 <td width="50%" valign="top">
 <a href="https://github.com/Sanskar1724/Retail-Lakehouse-with-Databricks"><img src="social/card-retail-lakehouse.svg" width="100%" alt="Retail Lakehouse with Databricks"/></a>
 <h3><a href="https://github.com/Sanskar1724/Retail-Lakehouse-with-Databricks">Retail Lakehouse with Databricks</a></h3>
-<p>A medallion pipeline that preserves raw source data in Bronze, standardizes and validates it in Silver, and serves dimensional models and KPIs from Gold. The repository documents Delta Lake storage, Databricks Jobs, metadata-driven ingestion, Unity Catalog governance, and Power BI consumption.</p>
-<p><code>PySpark</code> <code>Databricks</code> <code>Delta Lake</code> <code>Unity Catalog</code></p>
+<strong>Problem:</strong> inconsistent operational data is hard to trust.<br/>
+<strong>Build:</strong> Bronze ingestion -> Silver quality and standardization -> Gold dimensional models and KPIs.<br/>
+<code>PySpark</code> <code>Databricks</code> <code>Delta Lake</code> <code>Unity Catalog</code>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/Sanskar1724/DataPilot"><img src="social/card-datapilot.svg" width="100%" alt="DataPilot"/></a>
 <h3><a href="https://github.com/Sanskar1724/DataPilot">DataPilot</a></h3>
-<p>A data-quality pipeline for CSV, JSON, Excel, and Parquet inputs. Deterministic profiling finds quality issues; the LLM receives metadata rather than raw rows; validated fix plans are executed only through a registered transformation set, producing a clean dataset and an auditable report.</p>
-<p><code>Python</code> <code>pandas</code> <code>DuckDB</code> <code>Pydantic</code></p>
+<strong>Problem:</strong> dirty files need repeatable fixes, not opaque guesses.<br/>
+<strong>Build:</strong> deterministic profiling -> metadata-only AI reasoning -> validated transformations -> quality report.<br/>
+<code>Python</code> <code>pandas</code> <code>DuckDB</code> <code>Pydantic</code>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://github.com/Sanskar1724/CampusOps"><img src="social/card-campusops.svg" width="100%" alt="CampusOps"/></a>
 <h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps</a></h3>
-<p>An academic operations assistant that unifies email, timetables, documents, deadlines, and reminders. A retrieval-first agent serves web, Telegram, and email channels, with hybrid search, vision OCR, scheduled notifications, and a deterministic fallback when an LLM is unavailable.</p>
-<p><code>FastAPI</code> <code>Next.js</code> <code>PostgreSQL</code> <code>pgvector</code></p>
+<strong>Problem:</strong> academic information is scattered across channels.<br/>
+<strong>Build:</strong> retrieval-first agent with hybrid search, OCR, scheduled notifications, and deterministic fallback across web, Telegram, and email.<br/>
+<code>FastAPI</code> <code>Next.js</code> <code>PostgreSQL</code> <code>pgvector</code>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/Sanskar1724/FinSight_AI"><img src="social/card-finsight.svg" width="100%" alt="FinSight AI"/></a>
 <h3><a href="https://github.com/Sanskar1724/FinSight_AI">FinSight AI</a></h3>
-<p>A finance workspace built around a transaction ledger, budgets, goals, analytics, scenarios, reminders, and a grounded assistant. Backend services own calculations and user isolation; the AI layer receives calculated context and evidence instead of inventing authoritative totals.</p>
-<p><code>React</code> <code>TypeScript</code> <code>FastAPI</code> <code>SQLAlchemy</code></p>
+<strong>Problem:</strong> finance assistants must not invent authoritative figures.<br/>
+<strong>Build:</strong> user-scoped ledger and backend calculations with evidence-backed analytics, scenarios, reminders, and AI answers.<br/>
+<code>React</code> <code>TypeScript</code> <code>FastAPI</code> <code>SQLAlchemy</code>
 </td>
 </tr>
 </table>
