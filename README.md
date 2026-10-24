@@ -1,50 +1,45 @@
-<div align="center">
+<img src="assets/wallpaper.svg" width="100%" alt="Sanskar Chandawar, a student coding on a hilltop under a starry twilight sky"/>
 
-<img src="assets/image/Sunrise%20Tech%20Workspace%20Overlooking%20the%20City.jpg" width="100%" alt="Developer workspace overlooking a city at sunrise"/>
+<p align="center">
+I'm an enthusiastic developer who loves exploring new technologies, solving problems, and turning ideas into reality.
+I'm passionate about <b>Data Engineering</b>, <b>AI/LLMs</b>, and <b>software development</b>, always experimenting with new tools and pushing myself to become a better engineer.
+I believe in learning by building, improving through challenges, and creating technology that makes a real-world impact.
+</p>
 
-<a href="https://forgeaistudio.vercel.app"><img src="https://img.shields.io/badge/Forge_AI_Studio-live-a78bfa?style=for-the-badge&labelColor=08111f" alt="Forge AI Studio"/></a>
+<p align="center">
 <a href="https://www.linkedin.com/in/sanskar-chandawar"><img src="https://img.shields.io/badge/LinkedIn-connect-38bdf8?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=08111f" alt="LinkedIn"/></a>
 <a href="mailto:sanskarchandawar3@gmail.com"><img src="https://img.shields.io/badge/Email-say_hi-34d399?style=for-the-badge&logo=gmail&logoColor=white&labelColor=08111f" alt="Email"/></a>
+</p>
 
-</div>
+<img src="assets/stats.svg" width="100%" alt="25+ public repositories, 6 live deployments, 1 LLM built from scratch"/>
 
 <img src="assets/h-projects.svg" width="100%" alt="Projects"/>
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/Sanskar1724/AI-Product-Studio"><img src="social/card-ai-product-studio.svg" width="100%" alt="FORGE AI Product Studio"/></a>
-<h3><a href="https://github.com/Sanskar1724/AI-Product-Studio">FORGE// · AI Product Studio</a></h3>
-An independent studio interface that turns ideas into software, automations, data products, and MVPs.
+<a href="https://forgeaistudio.vercel.app"><img src="social/card-ai-product-studio.svg" width="100%" alt="FORGE AI Product Studio, live site"/></a>
+<h3><a href="https://github.com/Sanskar1724/AI-Product-Studio">FORGE// AI Product Studio</a></h3>
+A studio site for AI solutions, software, automation, data products, and rapid MVPs.
 <br/><br/><code>React</code> <code>TypeScript</code> <code>Vite</code> <code>Tailwind</code> <code>Framer Motion</code>
-<br/><br/><a href="https://forgeaistudio.vercel.app">Live site ↗</a>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/Sanskar1724/CampusOps"><img src="social/card-campusops.svg" width="100%" alt="CampusOps academic AI agent"/></a>
-<h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps · Academic AI Agent</a></h3>
-Pulls email, timetable, and documents together, then delivers one useful brief over web, Telegram, and email.
+<a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg" width="100%" alt="CampusOps, live site"/></a>
+<h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps</a></h3>
+Reads email, timetables, and documents, then sends a daily brief over web, Telegram, and email.
 <br/><br/><code>Python</code> <code>FastAPI</code> <code>Next.js</code> <code>PostgreSQL</code> <code>pgvector</code>
-<br/><br/><a href="https://github.com/Sanskar1724/CampusOps">View repo ↗</a>
 </td>
 </tr>
 </table>
 
 <img src="assets/h-stack.svg" width="100%" alt="Skills"/>
 
-<img src="assets/skills.svg" width="100%" alt="Skills: RAG, agents, PySpark, Databricks, Python, FastAPI, React, PostgreSQL, Docker and more"/>
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=python,ts,react,nextjs,tailwind,fastapi,postgres,docker,githubactions&theme=dark&perline=9" alt="Tech icons"/>
-</div>
+<img src="assets/skills.svg" width="100%" alt="Skills: LLM APIs, RAG, PyTorch, PySpark, Databricks, Python, TypeScript, React, FastAPI, Streamlit, Docker and more"/>
 
 <img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 
-<div align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green-animate.svg"/>
   <img src="profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="GitHub contribution graph"/>
 </picture>
-<br/>
-<sub>Open to AI product and data engineering work · <a href="mailto:sanskarchandawar3@gmail.com">sanskarchandawar3@gmail.com</a></sub>
-</div>
