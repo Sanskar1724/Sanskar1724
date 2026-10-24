@@ -1,6 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" role="img" aria-label="PROJECTS">
-<style>text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace} .line{animation:slide 4s ease-in-out infinite} @keyframes slide{from{transform:translateX(-180px)}to{transform:translateX(900px)}} @media(prefers-reduced-motion:reduce){*{animation:none}}</style>
-<text x="0" y="38" font-size="13" fill="#38bdf8">01</text>
-<text x="40" y="38" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#8b949e">PROJECTS</text>
-<rect y="54" width="900" height="1" fill="#30363d"/><rect class="line" y="53" width="180" height="3" fill="#38bdf8"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" role="img" aria-label="SELECTED PROJECTS">
+<rect width="900" height="64" rx="8" fill="#0b1424"/><text x="22" y="39" font-family="monospace" font-size="13" fill="#38bdf8">01</text><text x="64" y="39" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#e6edf3">SELECTED PROJECTS</text><path d="M0 57h900" stroke="#26364b"/><path d="M0 57h190" stroke="#38bdf8" stroke-width="3"/>
 </svg>
