@@ -131,9 +131,9 @@ def wallpaper() -> str:
 
 STATS = [
     ("25+", "public repositories", VIOLET),
-    ("6", "live deployments", CYAN),
-    ("1", "LLM built from scratch", AMBER),
-    ("∞", "things left to learn", GREEN),
+    ("267+", "automated tests in top projects", CYAN),
+    ("590k", "transactions modeled", AMBER),
+    ("1", "research paper", GREEN),
 ]
 
 
@@ -157,18 +157,18 @@ def stats() -> str:
             f'<text x="{x + 20}" y="46" font-family="{SANS}" font-size="32" font-weight="800" fill="{color}">{value}</text>'
             f'<text x="{x + 20}" y="66" font-family="{SANS}" font-size="13" fill="{MUTED}">{label}</text></g>'
         )
-    return svg(4 * tw + 3 * gap, 96, "25+ repositories, 6 live deployments, 1 LLM built from scratch", "".join(parts), style)
+    return svg(4 * tw + 3 * gap, 96, "25+ repositories, 267+ automated tests, 590k transactions modeled, 1 research paper", "".join(parts), style)
 
 
 SKILLS = [
     ("AI &amp; LLMs", "AI", VIOLET, ["LLM APIs", "RAG", "ReAct agents", "Fine-tuning", "QLoRA", "PyTorch", "Hugging Face"]),
     ("DATA ENGINEERING", "DB", CYAN, ["PySpark", "Databricks", "Delta Lake", "SQL", "Data warehousing", "Data quality"]),
     ("SOFTWARE", "&lt;/&gt;", AMBER, ["Python", "TypeScript", "React", "Next.js", "FastAPI", "Java"]),
-    ("ML &amp; DELIVERY", "ML", GREEN, ["scikit-learn", "pandas", "Streamlit", "PostgreSQL", "Docker", "GitHub Actions"]),
+    ("ML &amp; DELIVERY", "ML", GREEN, ["scikit-learn", "LightGBM", "Streamlit", "PostgreSQL", "Docker", "GitHub Actions"]),
 ]
 EXPLORING = [
     "Transformer from scratch", "SFT · DPO · GRPO", "Personal digital twin", "Recursive LMs",
-    "Medallion lakehouse", "Fraud risk scoring", "Disease prediction",
+    "Medallion lakehouse", "MILP optimization", "Rural health assistant",
 ]
 
 
@@ -231,62 +231,148 @@ def skills() -> str:
     return svg(full, 2 * (ph + gap) + eh, "Skills across AI and LLMs, data engineering, software, ML and delivery", "".join(parts), style)
 
 
-def window(path: str, color: str) -> str:
-    style_pulse = "transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite"
-    return (
-        f'<rect width="720" height="360" rx="14" fill="{BG}"/><rect x=".5" y=".5" width="719" height="359" rx="14" fill="none" stroke="{LINE}"/>'
-        f'<rect x="20" y="20" width="680" height="30" rx="7" fill="#0f1d31"/>'
-        f'<circle cx="40" cy="35" r="5" fill="#fb7185"/><circle cx="58" cy="35" r="5" fill="{AMBER}"/><circle cx="76" cy="35" r="5" fill="#4ade80"/>'
-        f'<text x="100" y="40" font-family="{MONO}" font-size="12" fill="{MUTED}">{path}</text>'
-        f'<rect x="626" y="26" width="64" height="18" rx="9" fill="{GREEN}" fill-opacity=".12" stroke="{GREEN}" stroke-opacity=".5"/>'
-        f'<circle cx="640" cy="35" r="3.5" fill="{GREEN}" style="{style_pulse}"/><circle cx="640" cy="35" r="3.5" fill="{GREEN}"/>'
-        f'<text x="650" y="39" font-family="{MONO}" font-size="10" font-weight="700" fill="{GREEN}">LIVE</text>'
-    )
-
-
+ROSE = "#fb7185"
+ORANGE = "#fb923c"
 PULSE = "@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.4);opacity:0}}"
+PULSE_STYLE = "transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite"
 
 
-def card_studio() -> str:
-    stages = ["IDEA", "DESIGN", "BUILD", "SHIP"]
-    style = (
-        PULSE
-        + "@keyframes lit{0%,20%{fill-opacity:.9;stroke-opacity:1}30%,100%{fill-opacity:.12;stroke-opacity:.4}}"
-        ".st{animation:lit 4s infinite}"
-        "@keyframes flow{to{stroke-dashoffset:-24}}.ln{stroke-dasharray:4 8;animation:flow 1s linear infinite}"
-        "@keyframes blink{50%{opacity:0}}.cur{animation:blink 1s step-end infinite}"
+def window(path: str, accent: str, badge: str = "") -> str:
+    """Card frame: rotating gradient border, browser bar, optional LIVE/DEMO pill."""
+    parts = [
+        '<defs><linearGradient id="bd" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="720" y2="360">'
+        f'<stop offset="0" stop-color="{accent}"/><stop offset=".5" stop-color="{accent}" stop-opacity="0"/>'
+        f'<stop offset="1" stop-color="{CYAN}"/>'
+        '<animateTransform attributeName="gradientTransform" type="rotate" from="0 360 180" to="360 360 180" dur="8s" repeatCount="indefinite"/>'
+        "</linearGradient></defs>",
+        f'<rect width="720" height="360" rx="14" fill="{BG}"/>',
+        f'<rect x=".75" y=".75" width="718.5" height="358.5" rx="14" fill="none" stroke="{LINE}" stroke-width="1.5"/>',
+        '<rect x=".75" y=".75" width="718.5" height="358.5" rx="14" fill="none" stroke="url(#bd)" stroke-width="1.5"/>',
+        '<rect x="20" y="20" width="680" height="30" rx="7" fill="#0f1d31"/>',
+        f'<circle cx="40" cy="35" r="5" fill="{ROSE}"/><circle cx="58" cy="35" r="5" fill="{AMBER}"/><circle cx="76" cy="35" r="5" fill="#4ade80"/>',
+        f'<text x="100" y="40" font-family="{MONO}" font-size="12" fill="{MUTED}">{path}</text>',
+    ]
+    if badge:
+        parts.append(
+            f'<rect x="626" y="26" width="64" height="18" rx="9" fill="{GREEN}" fill-opacity=".12" stroke="{GREEN}" stroke-opacity=".5"/>'
+            f'<circle cx="640" cy="35" r="3.5" fill="{GREEN}" style="{PULSE_STYLE}"/><circle cx="640" cy="35" r="3.5" fill="{GREEN}"/>'
+            f'<text x="650" y="39" font-family="{MONO}" font-size="10" font-weight="700" fill="{GREEN}">{badge}</text>'
+        )
+    return "".join(parts)
+
+
+def title(name: str, tagline: str, accent: str) -> str:
+    return (
+        f'<text x="40" y="98" font-family="{SANS}" font-size="32" font-weight="800" fill="{INK}">{name}</text>'
+        f'<text x="40" y="124" font-family="{MONO}" font-size="12" letter-spacing="2" fill="{accent}">{tagline}</text>'
     )
-    boxes = "".join(
-        f'<rect class="st" x="{60 + i * 160}" y="190" width="120" height="54" rx="10" fill="{VIOLET}" stroke="{VIOLET}" style="animation-delay:{i}s"/>'
-        f'<text x="{120 + i * 160}" y="223" text-anchor="middle" font-family="{MONO}" font-size="14" font-weight="700" fill="{INK}">{s}</text>'
-        for i, s in enumerate(stages)
+
+
+def metrics(items: list[str], accent: str) -> str:
+    parts, x = [], 40
+    for item in items:
+        w = round(len(item) * 7 + 26)
+        parts.append(
+            f'<rect x="{x}" y="304" width="{w}" height="26" rx="13" fill="{accent}" fill-opacity=".12" stroke="{accent}" stroke-opacity=".5"/>'
+            f'<text x="{x + w / 2:.1f}" y="321" text-anchor="middle" font-family="{MONO}" font-size="11.5" font-weight="700" fill="{INK}">{item}</text>'
+        )
+        x += w + 10
+    return "".join(parts)
+
+
+def card_finsight() -> str:
+    style = (
+        "@keyframes grow{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}"
+        ".b{transform-box:fill-box;transform-origin:bottom;animation:grow 4s ease-in-out infinite}"
+        "@keyframes show{0%,8%{opacity:0;transform:translateY(6px)}18%,86%{opacity:1;transform:none}96%,100%{opacity:0}}"
+        ".m{opacity:0;animation:show 7s ease-in-out infinite}"
+        "@keyframes flow{to{stroke-dashoffset:-20}}.f{stroke-dasharray:5 5;animation:flow 1.2s linear infinite}"
+    )
+    heights = [60, 88, 52, 104, 76, 118]
+    bars = "".join(
+        f'<rect class="b" x="{48 + i * 36}" y="{282 - h}" width="22" height="{h}" rx="4" fill="{AMBER}" '
+        f'fill-opacity="{.35 + i * .1:.2f}" style="animation-delay:{i * .25:.2f}s"/>'
+        for i, h in enumerate(heights)
     )
     body = (
-        '<defs><linearGradient id="t" x1="0" x2="1">'
-        f'<stop offset="0" stop-color="{INK}"/><stop offset="1" stop-color="{VIOLET}"/></linearGradient></defs>'
-        + window("forgeaistudio.vercel.app", VIOLET)
-        + f'<text x="40" y="108" font-family="{SANS}" font-size="36" font-weight="800" fill="url(#t)">FORGE//</text>'
-        f'<rect class="cur" x="196" y="80" width="14" height="32" fill="{VIOLET}"/>'
-        f'<text x="40" y="140" font-family="{MONO}" font-size="13" letter-spacing="2" fill="{VIOLET}">INDEPENDENT AI PRODUCT STUDIO</text>'
-        f'<path class="ln" d="M60 217H660" stroke="{VIOLET}" stroke-width="2" stroke-opacity=".6"/>'
-        + boxes
-        + f'<path d="M120 270H600" stroke="{LINE}" stroke-width="2"/>'
-        f'<circle r="6" fill="{INK}"><animateMotion dur="4s" repeatCount="indefinite" path="M120 270H600"/></circle>'
-        f'<text x="40" y="320" font-family="{MONO}" font-size="12" fill="{MUTED}">AI solutions · automation · data products · rapid MVPs</text>'
+        window("finsight / grounded-assistant", AMBER)
+        + title("FinSight AI", "MAKE EVERY RUPEE MAKE SENSE", AMBER)
+        + f'<path d="M40 282H270" stroke="{LINE}"/>{bars}'
+        f'<path class="f" d="M59 200L95 176L131 214L167 160L203 184L239 148L275 132" fill="none" stroke="{INK}" stroke-opacity=".7" stroke-width="1.6"/>'
+        f'<g class="m"><rect x="390" y="150" width="290" height="34" rx="10" fill="#13233a"/>'
+        f'<text x="406" y="172" font-family="{SANS}" font-size="13" fill="{INK}">Which budgets are at risk this month?</text></g>'
+        f'<g class="m" style="animation-delay:.9s"><rect x="310" y="196" width="370" height="78" rx="10" fill="{AMBER}" fill-opacity=".08" stroke="{AMBER}" stroke-opacity=".45"/>'
+        f'<text x="326" y="222" font-family="{SANS}" font-size="13" fill="{INK}">Food is at 92% of its limit with 9 days left.</text>'
+        f'<rect x="326" y="238" width="132" height="22" rx="6" fill="#0f1b2d" stroke="{GREEN}" stroke-opacity=".5"/>'
+        f'<text x="392" y="253" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{GREEN}">evidence: 14 rows</text>'
+        f'<rect x="466" y="238" width="112" height="22" rx="6" fill="#0f1b2d" stroke="{CYAN}" stroke-opacity=".5"/>'
+        f'<text x="522" y="253" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{CYAN}">source: ledger</text></g>'
+        + metrics(["77 tests + CI", "28-question benchmark", "PWA"], AMBER)
     )
-    return svg(720, 360, "FORGE AI Product Studio", body, style)
+    return svg(720, 360, "FinSight AI personal finance workspace", body, style)
+
+
+def card_paytrust() -> str:
+    style = (
+        "@keyframes needle{0%,28%{transform:rotate(-62deg)}33%,61%{transform:rotate(0)}66%,95%{transform:rotate(62deg)}100%{transform:rotate(-62deg)}}"
+        ".nd{transform-origin:170px 280px;animation:needle 6s ease-in-out infinite}"
+        "@keyframes lit{0%,30%{fill-opacity:.85}36%,100%{fill-opacity:.08}}.pl{animation:lit 6s infinite}"
+    )
+    pills = "".join(
+        f'<rect class="pl" x="330" y="{150 + i * 46}" width="150" height="34" rx="17" fill="{c}" fill-opacity=".08" stroke="{c}" style="animation-delay:{i * 2}s"/>'
+        f'<text x="405" y="{172 + i * 46}" text-anchor="middle" font-family="{MONO}" font-size="13" font-weight="700" fill="{INK}">{label}</text>'
+        f'<text x="496" y="{172 + i * 46}" font-family="{SANS}" font-size="12.5" fill="{MUTED}">{why}</text>'
+        for i, (label, c, why) in enumerate([
+            ("ALLOW", GREEN, "low risk, within policy"),
+            ("ASK_USER", AMBER, "medium risk or approval gate"),
+            ("DENY", ROSE, "policy violation or high risk"),
+        ])
+    )
+    body = (
+        '<defs><linearGradient id="gauge" gradientUnits="userSpaceOnUse" x1="90" x2="250">'
+        f'<stop offset="0" stop-color="{GREEN}"/><stop offset=".5" stop-color="{AMBER}"/><stop offset="1" stop-color="{ROSE}"/></linearGradient></defs>'
+        + window("paytrustai.streamlit.app", ROSE, "LIVE")
+        + title("PayTrust AI", "SHOULD THIS AGENT BE ALLOWED TO PAY?", ROSE)
+        + f'<path d="M90 280A80 80 0 0 1 250 280" fill="none" stroke="{LINE}" stroke-width="14" stroke-linecap="round"/>'
+        '<path d="M90 280A80 80 0 0 1 250 280" fill="none" stroke="url(#gauge)" stroke-width="8" stroke-linecap="round"/>'
+        f'<line class="nd" x1="170" y1="280" x2="170" y2="214" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>'
+        f'<circle cx="170" cy="280" r="7" fill="{INK}"/>'
+        f'<text x="170" y="178" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">risk score 0-100</text>'
+        + pills
+        + metrics(["IEEE-CIS 590k txns", "ROC-AUC 0.842", "128 tests"], ROSE)
+    )
+    return svg(720, 360, "PayTrust AI payment safety layer for AI agents", body, style)
+
+
+def card_margin() -> str:
+    style = (
+        "@keyframes cas{0%,100%{fill-opacity:.15}20%{fill-opacity:.85}40%{fill-opacity:.15}}.st{animation:cas 4s infinite}"
+        "@keyframes up{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}.up{animation:up 3s ease-in-out infinite}"
+    )
+    stages = [(260, "150 candidates"), (200, "LightGBM rerank"), (140, "MILP, margin &#8805; 15%"), (80, "2 add-ons")]
+    bars = "".join(
+        f'<rect class="st" x="40" y="{152 + i * 34}" width="{w}" height="24" rx="6" fill="{ORANGE}" stroke="{ORANGE}" stroke-opacity=".6" style="animation-delay:{i * .5}s"/>'
+        f'<text x="{52 + w}" y="{169 + i * 34}" font-family="{MONO}" font-size="12" fill="{MUTED}">{label}</text>'
+        for i, (w, label) in enumerate(stages)
+    )
+    body = (
+        window("huggingface.co/spaces / MarginGraph", ORANGE, "DEMO")
+        + title("MarginGraph", "A RANKER FOR RELEVANCE, AN OPTIMIZER FOR PROFIT", ORANGE)
+        + bars
+        + f'<g class="up"><text x="510" y="214" font-family="{SANS}" font-size="52" font-weight="800" fill="{ORANGE}">+14%</text>'
+        f'<text x="512" y="240" font-family="{SANS}" font-size="13" fill="{MUTED}">profit per basket vs ranker</text>'
+        f'<text x="512" y="258" font-family="{SANS}" font-size="11" fill="{MUTED}" fill-opacity=".7">(simulated cost and stock)</text></g>'
+        + metrics(["Hit@10 38.1%", "0 margin-floor breaks", "research paper"], ORANGE)
+    )
+    return svg(720, 360, "MarginGraph margin-aware recommendations", body, style)
 
 
 def card_campus() -> str:
     style = PULSE + ".p{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}"
-    agent = (360, 220)
-    sources = [("email", 160), ("timetable", 220), ("docs", 280)]
-    channels = [("web", 160), ("telegram", 220), ("email", 280)]
-    parts = [window("campus-ops-chi.vercel.app", GREEN)]
-    parts.append(
-        f'<text x="40" y="100" font-family="{SANS}" font-size="32" font-weight="800" fill="{INK}">CampusOps</text>'
-        f'<text x="40" y="128" font-family="{MONO}" font-size="13" letter-spacing="2" fill="{GREEN}">RETRIEVE / COMPOSE / DELIVER</text>'
-    )
+    agent = (360, 205)
+    sources = [("email", 150), ("timetable", 205), ("docs", 260)]
+    channels = [("web", 150), ("telegram", 205), ("email", 260)]
+    parts = [window("campus-ops-chi.vercel.app", GREEN, "LIVE"), title("CampusOps", "RETRIEVE / COMPOSE / DELIVER", GREEN)]
     for i, (name, y) in enumerate(sources):
         d = f"M150 {y}C250 {y} 260 {agent[1]} {agent[0]} {agent[1]}"
         parts.append(
@@ -307,7 +393,7 @@ def card_campus() -> str:
         f'<circle class="p" cx="{agent[0]}" cy="{agent[1]}" r="22" fill="none" stroke="{GREEN}" stroke-width="2"/>'
         f'<circle cx="{agent[0]}" cy="{agent[1]}" r="22" fill="#0f2a26" stroke="{GREEN}" stroke-width="2"/>'
         f'<text x="{agent[0]}" y="{agent[1] + 5}" text-anchor="middle" font-family="{MONO}" font-size="12" font-weight="700" fill="{GREEN}">AI</text>'
-        f'<text x="40" y="330" font-family="{MONO}" font-size="12" fill="{MUTED}">one agent that keeps a whole class community in sync</text>'
+        + metrics(["62 tests", "hybrid search + OCR", "Vercel + Render"], GREEN)
     )
     return svg(720, 360, "CampusOps academic AI agent", "".join(parts), style)
 
@@ -323,8 +409,13 @@ def main() -> None:
     (ASSETS / "wallpaper.svg").write_text(wallpaper(), encoding="utf-8")
     (ASSETS / "stats.svg").write_text(stats(), encoding="utf-8")
     (ASSETS / "skills.svg").write_text(skills(), encoding="utf-8")
-    (SOCIAL / "card-ai-product-studio.svg").write_text(card_studio(), encoding="utf-8")
-    (SOCIAL / "card-campusops.svg").write_text(card_campus(), encoding="utf-8")
+    for name, build in (
+        ("finsight", card_finsight),
+        ("paytrust", card_paytrust),
+        ("margingraph", card_margin),
+        ("campusops", card_campus),
+    ):
+        (SOCIAL / f"card-{name}.svg").write_text(build(), encoding="utf-8")
 
 
 if __name__ == "__main__":
