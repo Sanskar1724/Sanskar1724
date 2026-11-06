@@ -28,16 +28,6 @@ A personal finance workspace for India where the AI calculates first and writes 
 <br/><br/><code>React 19</code> <code>TypeScript</code> <code>FastAPI</code> <code>PostgreSQL</code> <code>PWA</code>
 </td>
 <td width="50%" valign="top">
-<a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg" width="100%" alt="PayTrust AI, live demo"/></a>
-<h3><a href="https://github.com/Sanskar1724/PayTrust_AI">PayTrust AI</a></h3>
-Decides whether an AI agent may make a payment: <code>ALLOW</code>, <code>ASK_USER</code>, or <code>DENY</code>. Built for the Razorpay Buildathon.
-<br/><br/>🔬 <b>Research:</b> fraud model on IEEE-CIS (590k transactions) with a time-based split; ROC-AUC 0.842, recall 0.823.
-<br/>🏭 <b>Practice:</b> deterministic policy gate, LLM kept advisory-only, HMAC-verified idempotent webhooks, 128 tests.
-<br/><br/><code>Python</code> <code>FastAPI</code> <code>scikit-learn</code> <code>Streamlit</code> <code>Razorpay</code>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
 <a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg" width="100%" alt="MarginGraph, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/MarginGraph">MarginGraph</a></h3>
 Recommends add-ons that customers will buy and that keep the retailer profitable.
@@ -45,6 +35,16 @@ Recommends add-ons that customers will buy and that keep the retailer profitable
 <br/>🏭 <b>Practice:</b> a 30-day replay of real checkouts earned +24% add-on profit over the ranker alone (+19% across 5 seeds) with 0 margin-floor breaks vs 164. Cost and stock are simulated. Served through FastAPI with CI, p50 22 ms.
 <br/>📄 <b>Technical paper:</b> <a href="https://github.com/Sanskar1724/MarginGraph/blob/main/paper/main.pdf"><i>MarginGraph: Margin-Aware, Constrained Recommendation of Checkout Add-Ons</i></a> (preprint, 19 pages, <a href="https://github.com/Sanskar1724/MarginGraph/raw/main/paper/main.pdf">PDF</a>)
 <br/><br/><code>Python</code> <code>LightGBM</code> <code>PuLP</code> <code>FastAPI</code> <code>Gradio</code>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg" width="100%" alt="PayTrust AI, live demo"/></a>
+<h3><a href="https://github.com/Sanskar1724/PayTrust_AI">PayTrust AI</a></h3>
+Decides whether an AI agent may make a payment: <code>ALLOW</code>, <code>ASK_USER</code>, or <code>DENY</code>. Built for the Razorpay Buildathon.
+<br/><br/>🔬 <b>Research:</b> fraud model on IEEE-CIS (590k transactions) with a time-based split; ROC-AUC 0.842, recall 0.823.
+<br/>🏭 <b>Practice:</b> deterministic policy gate, LLM kept advisory-only, HMAC-verified idempotent webhooks, 128 tests.
+<br/><br/><code>Python</code> <code>FastAPI</code> <code>scikit-learn</code> <code>Streamlit</code> <code>Razorpay</code>
 </td>
 <td width="50%" valign="top">
 <a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg" width="100%" alt="CampusOps, live demo"/></a>
