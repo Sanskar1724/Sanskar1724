@@ -41,8 +41,9 @@ Decides whether an AI agent may make a payment: <code>ALLOW</code>, <code>ASK_US
 <a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg" width="100%" alt="MarginGraph, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/MarginGraph">MarginGraph</a></h3>
 Recommends add-ons that customers will buy and that keep the retailer profitable.
-<br/><br/>🔬 <b>Research:</b> LightGBM hits 38.1% Hit@10 on 4,480 real UCI baskets, then holds up on four more public datasets: Ta Feng +8.3 pts, Dunnhumby +9.8, Instacart +4.1 (once past purchases fill the pool first), and a tie on small Olist. LLM rankers tested and documented as a no-go; written up as a 17-page paper.
+<br/><br/>🔬 <b>Research:</b> LightGBM hits 38.1% Hit@10 on 4,480 real UCI baskets, then holds up on four more public datasets: Ta Feng +8.3 pts, Dunnhumby +9.8, Instacart +4.1 (once past purchases fill the pool first), and a tie on small Olist. LLM rankers tested and documented as a no-go; written up as a 19-page paper.
 <br/>🏭 <b>Practice:</b> a 30-day replay of real checkouts earned +24% add-on profit over the ranker alone (+19% across 5 seeds) with 0 margin-floor breaks vs 164. Cost and stock are simulated. Served through FastAPI with CI, p50 22 ms.
+<br/>📄 <b>Technical paper:</b> <a href="https://github.com/Sanskar1724/MarginGraph/blob/main/paper/main.pdf"><i>MarginGraph: Margin-Aware, Constrained Recommendation of Checkout Add-Ons</i></a> (preprint, 19 pages, <a href="https://github.com/Sanskar1724/MarginGraph/raw/main/paper/main.pdf">PDF</a>)
 <br/><br/><code>Python</code> <code>LightGBM</code> <code>PuLP</code> <code>FastAPI</code> <code>Gradio</code>
 </td>
 <td width="50%" valign="top">
