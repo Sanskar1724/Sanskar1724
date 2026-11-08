@@ -23,7 +23,7 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="social/card-finsight.svg" width="100%" alt="FinSight AI dashboard and grounded assistant"/>
 <h3><a href="https://github.com/Sanskar1724/FinSight_AI">FinSight AI</a></h3>
 A personal finance workspace for India where the AI calculates first and writes second.
-<br/><br/>🔬 <b>Research:</b> Part 1 benchmarks on real public data. bge-m3 routing reaches 93.4% on Banking77 (vs 65.5%), retrieval scores nDCG@10 0.410 on FiQA (vs 0.236 for BM25), and computing answers with code lifts FinQA accuracy from 48.7% to 71.0%. When both methods agree, answers are 82.6% correct.
+<br/><br/>🔬 <b>Research:</b> Part 1 benchmarks on real public data. bge-m3 routing reaches 93.4% on Banking77 (vs 65.5%), retrieval scores nDCG@10 0.410 on FiQA (vs 0.236 for BM25), and computing answers with code lifts FinQA accuracy from 48.7% to 71.0%. When both methods agree, answers are 82.6% correct. Part 2 on ConvFinQA: remembering the conversation lifts follow-up accuracy from 48% to 63% and doubles fully correct conversations (21% → 42%).
 <br/>🏭 <b>Practice:</b> <code>Decimal</code> finance engine, rate-limited auth, migrations, 77 tests, and CI for lint, types, and build.
 <br/><br/><code>React 19</code> <code>TypeScript</code> <code>FastAPI</code> <code>PostgreSQL</code> <code>PWA</code>
 </td>
