@@ -274,50 +274,74 @@ def skills() -> str:
 
 
 EXPLORING = [
-    # (title, detail, category, color, tool)
-    ("LLM from scratch", "RMSNorm · RoPE · GQA · SwiGLU", "LLM", VIOLET, "PyTorch"),
-    ("LLM fine-tuning", "CPT → SFT → DPO → GRPO", "LLM", VIOLET, "Hugging Face"),
-    ("Personal digital twin", "Qwen2.5 + QLoRA + Unsloth", "LLM", VIOLET, "Unsloth"),
-    ("Recursive LM", "recursive sub-LLM calls", "LLM", VIOLET, "OpenRouter"),
-    ("ReAct agent CLI", "think → act → observe", "AGENTS", CYAN, "Python"),
-    ("AI agents from scratch", "tool calling + tracing", "AGENTS", CYAN, "Python"),
-    ("Medallion lakehouse", "bronze → silver → gold", "DATA", AMBER, "Databricks"),
-    ("Rural health assistant", "41 diseases, 98.4% accuracy", "ML", GREEN, "Streamlit"),
+    # (column, color, [(technology, detail, repo, is_new)])
+    ("AI", VIOLET, [
+        ("Agent harnesses", "swappable tools, providers, fallbacks", "Deepseek-harness", False),
+        ("LLM evals", "task suites, scorers, rubrics", "inspect_ai", True),
+        ("Reasoning on / off", "LFM 1.7B thinking ON vs OFF", "Instant-1.7b", True),
+        ("Multi-agent routing", "router + specialists, -22% tokens", "FinSight", False),
+    ]),
+    ("DATA", CYAN, [
+        ("Multimodal data engine", "images, audio, video as dataframes", "Daft", True),
+        ("Lakehouse", "Delta Lake medallion + Unity Catalog", "Retail Lakehouse", False),
+        ("LLM-assisted data quality", "LLM reads metadata, never rows", "DataPilot", False),
+        ("Hybrid retrieval", "bge-m3 + BM25, nDCG@10 0.410", "FinSight", False),
+    ]),
+    ("FINANCE", AMBER, [
+        ("Agentic payments", "ALLOW / ASK_USER / DENY gate", "PayTrust", False),
+        ("Fraud ML", "IEEE-CIS, time-based split", "PayTrust", False),
+        ("Financial QA", "FinQA · ConvFinQA · TAT-QA", "FinSight", False),
+        ("Margin-aware recsys", "MILP with a 15% margin floor", "MarginGraph", False),
+    ]),
 ]
 
 
 def explorations() -> str:
-    cols, gap, full = 4, 12, 900
-    tw, th = (full - gap * (cols - 1)) // cols, 124
+    full, gap, head, th, tgap = 900, 18, 46, 92, 10
+    cw = (full - gap * 2) // 3
     style = (
         "@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}"
         ".t{opacity:0;animation:up .55s ease-out forwards}"
-        "@keyframes nudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}"
-        ".a{animation:nudge 2s ease-in-out infinite}"
+        "@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}"
+        ".p{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}"
+        "@keyframes flow{to{stroke-dashoffset:-16}}.f{stroke-dasharray:3 5;animation:flow 1.4s linear infinite}"
     )
     parts = []
-    for i, (name, detail, cat, color, tool) in enumerate(EXPLORING):
-        x, y = (i % cols) * (tw + gap), (i // cols) * (th + gap)
-        cw = len(cat) * 7 + 18
-        tool_w = round(len(tool) * 6.6 + 18)
+    n = 0
+    for c, (column, color, items) in enumerate(EXPLORING):
+        x = c * (cw + gap)
         parts.append(
-            f'<g class="t" style="animation-delay:{i * .08:.2f}s">'
-            f'<clipPath id="e{i}"><rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14"/></clipPath>'
-            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14" fill="{BG}" stroke="{LINE}"/>'
-            f'<g clip-path="url(#e{i})"><rect x="{x}" y="{y}" width="{tw}" height="3" fill="{color}"/>'
-            f'<circle cx="{x + tw}" cy="{y}" r="70" fill="{color}" fill-opacity=".08"/></g>'
-            f'<text x="{x + 16}" y="{y + 30}" font-family="{MONO}" font-size="11" fill="{MUTED}">{i + 1:02d}</text>'
-            f'<rect x="{x + 42}" y="{y + 17}" width="{cw}" height="18" rx="9" fill="{color}" fill-opacity=".15" stroke="{color}" stroke-opacity=".5"/>'
-            f'<text x="{x + 42 + cw / 2:.1f}" y="{y + 30}" text-anchor="middle" font-family="{MONO}" font-size="10" font-weight="700" fill="{color}">{cat}</text>'
-            f'<text class="a" x="{x + tw - 28}" y="{y + 32}" font-family="{SANS}" font-size="15" font-weight="700" fill="{color}">&#8599;</text>'
-            f'<text x="{x + 16}" y="{y + 62}" font-family="{SANS}" font-size="14.5" font-weight="700" fill="{INK}">{name}</text>'
-            f'<text x="{x + 16}" y="{y + 82}" font-family="{MONO}" font-size="11" fill="{MUTED}">{detail}</text>'
-            f'<rect x="{x + 16}" y="{y + 94}" width="{tool_w}" height="20" rx="6" fill="#0f1b2d" stroke="{LINE}"/>'
-            f'<text x="{x + 16 + tool_w / 2:.1f}" y="{y + 108}" text-anchor="middle" font-family="{MONO}" font-size="10.5" fill="{INK}">{tool}</text>'
-            "</g>"
+            f'<rect x="{x}" y="0" width="{cw}" height="36" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".45"/>'
+            f'<text x="{x + 16}" y="23" font-family="{SANS}" font-size="14" font-weight="800" letter-spacing="3" fill="{color}">{column}</text>'
+            f'<text x="{x + cw - 16}" y="23" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">{len(items)} topics</text>'
+            f'<path class="f" d="M{x + 14} {head - 6}V{head + len(items) * (th + tgap) - tgap - 10}" stroke="{color}" stroke-opacity=".5"/>'
         )
-    rows = -(-len(EXPLORING) // cols)
-    return svg(full, rows * th + (rows - 1) * gap, "Recent explorations: LLM from scratch, fine-tuning, digital twin, recursive LM, agents, lakehouse, health ML", "".join(parts), style)
+        for r, (tech, detail, repo, new) in enumerate(items):
+            y = head + r * (th + tgap)
+            tx = x + 28
+            w = cw - 28
+            repo_w = round(len(repo) * 6.6 + 30)
+            new_badge = (
+                f'<rect x="{tx + w - 56}" y="{y + 12}" width="42" height="18" rx="9" fill="{GREEN}" fill-opacity=".15" stroke="{GREEN}" stroke-opacity=".6"/>'
+                f'<circle class="p" cx="{tx + w - 46}" cy="{y + 21}" r="3" fill="{GREEN}"/><circle cx="{tx + w - 46}" cy="{y + 21}" r="3" fill="{GREEN}"/>'
+                f'<text x="{tx + w - 39}" y="{y + 25}" font-family="{MONO}" font-size="9.5" font-weight="700" fill="{GREEN}">NEW</text>'
+                if new else ""
+            )
+            parts.append(
+                f'<g class="t" style="animation-delay:{n * .07:.2f}s">'
+                f'<circle cx="{x + 14}" cy="{y + 24}" r="5" fill="{BG}" stroke="{color}" stroke-width="2"/>'
+                f'<rect x="{tx}" y="{y}" width="{w}" height="{th}" rx="12" fill="{BG}" stroke="{LINE}"/>'
+                f'<rect x="{tx}" y="{y + 14}" width="3" height="{th - 28}" rx="1.5" fill="{color}"/>'
+                f'<text x="{tx + 16}" y="{y + 26}" font-family="{SANS}" font-size="14.5" font-weight="700" fill="{INK}">{tech}</text>'
+                f'{new_badge}'
+                f'<text x="{tx + 16}" y="{y + 47}" font-family="{MONO}" font-size="10.5" fill="{MUTED}">{detail}</text>'
+                f'<rect x="{tx + 16}" y="{y + 60}" width="{repo_w}" height="20" rx="6" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".35"/>'
+                f'<text x="{tx + 26}" y="{y + 74}" font-family="{MONO}" font-size="10.5" fill="{INK}">&#8627; {repo}</text>'
+                "</g>"
+            )
+            n += 1
+    rows = max(len(items) for *_, items in EXPLORING)
+    return svg(full, head + rows * (th + tgap) - tgap, "Exploring: agent harnesses, LLM evals, reasoning models, multimodal data, lakehouse, agentic payments, fraud ML, financial QA", "".join(parts), style)
 
 
 ROSE = "#fb7185"
