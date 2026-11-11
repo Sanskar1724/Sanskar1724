@@ -187,36 +187,39 @@ def stats() -> str:
 
 
 SKILLS = [
-    ("AI &amp; LLMs", "AI", VIOLET, ["LLM APIs", "RAG", "LLM evals", "ReAct agents", "Fine-tuning", "QLoRA", "PyTorch", "Hugging Face"]),
-    ("DATA ENGINEERING", "DB", CYAN, ["PySpark", "Databricks", "Delta Lake", "SQL", "Data warehousing", "Data quality"]),
-    ("SOFTWARE", "&lt;/&gt;", AMBER, ["Python", "TypeScript", "React", "Next.js", "FastAPI", "Java"]),
-    ("ML &amp; DELIVERY", "ML", GREEN, ["scikit-learn", "LightGBM", "Streamlit", "PostgreSQL", "Docker", "GitHub Actions"]),
-]
-EXPLORING = [
-    "Transformer from scratch", "SFT · DPO · GRPO", "Personal digital twin", "Recursive LMs",
-    "Medallion lakehouse", "MILP optimization", "Rural health assistant",
+    # (title, glyph, color, core skills, working knowledge, proven in)
+    ("AI &amp; LLMs", "AI", VIOLET, ["LLM evals", "RAG", "LLM APIs"],
+     ["ReAct agents", "Fine-tuning", "QLoRA", "PyTorch", "Hugging Face"], "FinSight · CampusOps · PayTrust"),
+    ("DATA ENGINEERING", "DB", CYAN, ["PySpark", "SQL", "Databricks"],
+     ["Delta Lake", "Data warehousing", "Data quality"], "Retail Lakehouse · DataPilot"),
+    ("SOFTWARE", "&lt;/&gt;", AMBER, ["Python", "FastAPI", "TypeScript"],
+     ["React", "Next.js", "Java"], "FinSight · CampusOps"),
+    ("ML &amp; DELIVERY", "ML", GREEN, ["scikit-learn", "LightGBM", "PostgreSQL"],
+     ["Streamlit", "Docker", "GitHub Actions"], "MarginGraph · PayTrust"),
 ]
 
 
-def chip_rows(items: list[str], width: int) -> list[list[tuple[str, int]]]:
-    rows: list[list[tuple[str, int]]] = [[]]
+def chip_rows(items: list[tuple[str, bool]], width: int) -> list[list[tuple[str, bool, int]]]:
+    rows: list[list[tuple[str, bool, int]]] = [[]]
     used = 0
-    for item in items:
-        w = round(len(item) * 7.2 + 34)
+    for item, core in items:
+        w = round(len(item) * (7.6 if core else 7.2) + 34)
         if rows[-1] and used + w > width:
             rows.append([])
             used = 0
-        rows[-1].append((item, w))
+        rows[-1].append((item, core, w))
         used += w + 8
     return rows
 
 
 def panel(i: int, x: int, y: int, pw: int, ph: int, title: str, glyph: str, sub: str, color: str) -> str:
     return (
-        f'<linearGradient id="p{i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{color}" stop-opacity=".14"/>'
+        f'<linearGradient id="p{i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{color}" stop-opacity=".16"/>'
         f'<stop offset=".6" stop-color="{BG}" stop-opacity="0"/></linearGradient>'
+        f'<clipPath id="k{i}"><rect x="{x}" y="{y}" width="{pw}" height="{ph}" rx="14"/></clipPath>'
         f'<rect x="{x}" y="{y}" width="{pw}" height="{ph}" rx="14" fill="{BG}"/>'
         f'<rect x="{x}" y="{y}" width="{pw}" height="{ph}" rx="14" fill="url(#p{i})" stroke="{LINE}"/>'
+        f'<g clip-path="url(#k{i})"><rect x="{x}" y="{y}" width="4" height="{ph}" fill="{color}"/></g>'
         f'<rect x="{x + 20}" y="{y + 18}" width="36" height="36" rx="10" fill="{color}" fill-opacity=".15" stroke="{color}" stroke-opacity=".6"/>'
         f'<text x="{x + 38}" y="{y + 41}" text-anchor="middle" font-family="{MONO}" font-size="12" font-weight="700" fill="{color}">{glyph}</text>'
         f'<text x="{x + 68}" y="{y + 34}" font-family="{SANS}" font-size="15" font-weight="700" letter-spacing="2.5" fill="{INK}">{title}</text>'
@@ -226,35 +229,95 @@ def panel(i: int, x: int, y: int, pw: int, ph: int, title: str, glyph: str, sub:
 
 
 def skills() -> str:
-    pw, gap, full = 440, 20, 900
+    pw, gap, full, top = 440, 20, 900, 34
     style = (
         "@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}"
         ".chip{opacity:0;animation:up .5s ease-out forwards}"
-        "@keyframes dot{0%,100%{opacity:.35}50%{opacity:1}}.dot{animation:dot 2.4s ease-in-out infinite}"
+        "@keyframes glow{0%,100%{fill-opacity:.16}50%{fill-opacity:.3}}.core{animation:glow 3s ease-in-out infinite}"
     )
-    layouts = [chip_rows(items, pw - 40) for *_, items in SKILLS]
-    ph = 82 + max(len(r) for r in layouts) * 36 + 10
-    explore_rows = chip_rows(EXPLORING, full - 40)
-    eh = 82 + len(explore_rows) * 36 + 10
-    groups = [(t, g, c, rows, (i % 2) * (pw + gap), (i // 2) * (ph + gap), pw, ph, f"0{i + 1} · {len(items)} tools")
-              for i, ((t, g, c, items), rows) in enumerate(zip(SKILLS, layouts))]
-    groups.append(("RECENT EXPLORATIONS", "↗", PINK, explore_rows, 0, 2 * (ph + gap), full, eh, "05 · learning by building"))
-    parts = []
+    layouts = [chip_rows([(s, True) for s in core] + [(s, False) for s in rest], pw - 40)
+               for _, _, _, core, rest, _ in SKILLS]
+    ph = 82 + max(len(r) for r in layouts) * 36 + 40
+    parts = [
+        f'<rect x="0" y="4" width="26" height="18" rx="6" fill="{CYAN}" fill-opacity=".25" stroke="{CYAN}"/>'
+        f'<text x="34" y="18" font-family="{SANS}" font-size="12.5" fill="{INK}">core strength</text>'
+        f'<rect x="140" y="4" width="26" height="18" rx="6" fill="#0f1b2d" stroke="{CYAN}" stroke-opacity=".35"/>'
+        f'<text x="174" y="18" font-family="{SANS}" font-size="12.5" fill="{MUTED}">working knowledge</text>'
+        f'<text x="{full}" y="18" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">used in = projects behind each group</text>'
+    ]
     delay = 0.0
-    for i, (title, glyph, color, rows, x, y, w, hgt, sub) in enumerate(groups):
-        parts.append(panel(i, x, y, w, hgt, title, glyph, sub, color))
+    for i, ((title, glyph, color, core, rest, proof), rows) in enumerate(zip(SKILLS, layouts)):
+        x, y = (i % 2) * (pw + gap), top + (i // 2) * (ph + gap)
+        parts.append(panel(i, x, y, pw, ph, title, glyph, f"0{i + 1} · {len(core) + len(rest)} tools", color))
         for r, row in enumerate(rows):
             cx, cy = x + 20, y + 82 + r * 36
-            for j, (item, cw) in enumerate(row):
-                parts.append(
-                    f'<g class="chip" style="animation-delay:{delay:.2f}s">'
-                    f'<rect x="{cx}" y="{cy}" width="{cw}" height="28" rx="8" fill="#0f1b2d" stroke="{color}" stroke-opacity=".3"/>'
-                    f'<circle class="dot" cx="{cx + 13}" cy="{cy + 14}" r="3.5" fill="{color}" style="animation-delay:{j * .3:.1f}s"/>'
-                    f'<text x="{cx + 23}" y="{cy + 18.5}" font-family="{SANS}" font-size="13" fill="{INK}">{item}</text></g>'
-                )
+            for item, is_core, cw in row:
+                if is_core:
+                    chip = (
+                        f'<rect class="core" x="{cx}" y="{cy}" width="{cw}" height="28" rx="8" fill="{color}" fill-opacity=".2" stroke="{color}"/>'
+                        f'<text x="{cx + 12}" y="{cy + 18.5}" font-family="{SANS}" font-size="13" font-weight="700" fill="#fff">&#9733; {item}</text>'
+                    )
+                else:
+                    chip = (
+                        f'<rect x="{cx}" y="{cy}" width="{cw}" height="28" rx="8" fill="#0f1b2d" stroke="{color}" stroke-opacity=".3"/>'
+                        f'<circle cx="{cx + 13}" cy="{cy + 14}" r="3" fill="{color}" fill-opacity=".7"/>'
+                        f'<text x="{cx + 23}" y="{cy + 18.5}" font-family="{SANS}" font-size="13" fill="{INK}">{item}</text>'
+                    )
+                parts.append(f'<g class="chip" style="animation-delay:{delay:.2f}s">{chip}</g>')
                 cx += cw + 8
                 delay += 0.04
-    return svg(full, 2 * (ph + gap) + eh, "Skills across AI and LLMs, data engineering, software, ML and delivery", "".join(parts), style)
+        parts.append(
+            f'<path d="M{x + 20} {y + ph - 34}h{pw - 40}" stroke="{LINE}" stroke-dasharray="3 4"/>'
+            f'<text x="{x + 20}" y="{y + ph - 14}" font-family="{MONO}" font-size="11" fill="{MUTED}">used in <tspan fill="{color}">{proof}</tspan></text>'
+        )
+    return svg(full, top + 2 * ph + gap, "Skills: LLM evals, RAG, LLM APIs, PySpark, SQL, Databricks, Python, FastAPI, TypeScript, scikit-learn, LightGBM and more", "".join(parts), style)
+
+
+EXPLORING = [
+    # (title, detail, category, color, tool)
+    ("LLM from scratch", "RMSNorm · RoPE · GQA · SwiGLU", "LLM", VIOLET, "PyTorch"),
+    ("LLM fine-tuning", "CPT → SFT → DPO → GRPO", "LLM", VIOLET, "Hugging Face"),
+    ("Personal digital twin", "Qwen2.5 + QLoRA + Unsloth", "LLM", VIOLET, "Unsloth"),
+    ("Recursive LM", "recursive sub-LLM calls", "LLM", VIOLET, "OpenRouter"),
+    ("ReAct agent CLI", "think → act → observe", "AGENTS", CYAN, "Python"),
+    ("AI agents from scratch", "tool calling + tracing", "AGENTS", CYAN, "Python"),
+    ("Medallion lakehouse", "bronze → silver → gold", "DATA", AMBER, "Databricks"),
+    ("Rural health assistant", "41 diseases, 98.4% accuracy", "ML", GREEN, "Streamlit"),
+]
+
+
+def explorations() -> str:
+    cols, gap, full = 4, 12, 900
+    tw, th = (full - gap * (cols - 1)) // cols, 124
+    style = (
+        "@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}"
+        ".t{opacity:0;animation:up .55s ease-out forwards}"
+        "@keyframes nudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}"
+        ".a{animation:nudge 2s ease-in-out infinite}"
+    )
+    parts = []
+    for i, (name, detail, cat, color, tool) in enumerate(EXPLORING):
+        x, y = (i % cols) * (tw + gap), (i // cols) * (th + gap)
+        cw = len(cat) * 7 + 18
+        tool_w = round(len(tool) * 6.6 + 18)
+        parts.append(
+            f'<g class="t" style="animation-delay:{i * .08:.2f}s">'
+            f'<clipPath id="e{i}"><rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14"/></clipPath>'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14" fill="{BG}" stroke="{LINE}"/>'
+            f'<g clip-path="url(#e{i})"><rect x="{x}" y="{y}" width="{tw}" height="3" fill="{color}"/>'
+            f'<circle cx="{x + tw}" cy="{y}" r="70" fill="{color}" fill-opacity=".08"/></g>'
+            f'<text x="{x + 16}" y="{y + 30}" font-family="{MONO}" font-size="11" fill="{MUTED}">{i + 1:02d}</text>'
+            f'<rect x="{x + 42}" y="{y + 17}" width="{cw}" height="18" rx="9" fill="{color}" fill-opacity=".15" stroke="{color}" stroke-opacity=".5"/>'
+            f'<text x="{x + 42 + cw / 2:.1f}" y="{y + 30}" text-anchor="middle" font-family="{MONO}" font-size="10" font-weight="700" fill="{color}">{cat}</text>'
+            f'<text class="a" x="{x + tw - 28}" y="{y + 32}" font-family="{SANS}" font-size="15" font-weight="700" fill="{color}">&#8599;</text>'
+            f'<text x="{x + 16}" y="{y + 62}" font-family="{SANS}" font-size="14.5" font-weight="700" fill="{INK}">{name}</text>'
+            f'<text x="{x + 16}" y="{y + 82}" font-family="{MONO}" font-size="11" fill="{MUTED}">{detail}</text>'
+            f'<rect x="{x + 16}" y="{y + 94}" width="{tool_w}" height="20" rx="6" fill="#0f1b2d" stroke="{LINE}"/>'
+            f'<text x="{x + 16 + tool_w / 2:.1f}" y="{y + 108}" text-anchor="middle" font-family="{MONO}" font-size="10.5" fill="{INK}">{tool}</text>'
+            "</g>"
+        )
+    rows = -(-len(EXPLORING) // cols)
+    return svg(full, rows * th + (rows - 1) * gap, "Recent explorations: LLM from scratch, fine-tuning, digital twin, recursive LM, agents, lakehouse, health ML", "".join(parts), style)
 
 
 ROSE = "#fb7185"
@@ -429,12 +492,14 @@ def main() -> None:
     for filename, number, label in (
         ("h-projects.svg", "01", "PROJECTS"),
         ("h-stack.svg", "02", "SKILLS"),
-        ("h-activity.svg", "03", "ACTIVITY"),
+        ("h-explore.svg", "03", "EXPLORING"),
+        ("h-activity.svg", "04", "ACTIVITY"),
     ):
         (ASSETS / filename).write_text(header(number, label), encoding="utf-8")
     (ASSETS / "wallpaper.svg").write_text(wallpaper(), encoding="utf-8")
     (ASSETS / "stats.svg").write_text(stats(), encoding="utf-8")
     (ASSETS / "skills.svg").write_text(skills(), encoding="utf-8")
+    (ASSETS / "explorations.svg").write_text(explorations(), encoding="utf-8")
     for name, build in (
         ("finsight", card_finsight),
         ("paytrust", card_paytrust),

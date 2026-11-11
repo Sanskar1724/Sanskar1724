@@ -99,7 +99,11 @@ An academic agent that reads college email, timetables, and documents, then answ
 
 <img src="assets/h-stack.svg" width="100%" alt="Skills"/>
 
-<img src="assets/skills.svg" width="100%" alt="Skills: LLM APIs, RAG, LLM evals, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
+<img src="assets/skills.svg" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
+
+<img src="assets/h-explore.svg" width="100%" alt="Exploring"/>
+
+<img src="assets/explorations.svg" width="100%" alt="Recent explorations: LLM from scratch, LLM fine-tuning, personal digital twin, recursive LM, ReAct agent, AI agents from scratch, medallion lakehouse, rural health assistant"/>
 
 <img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 
