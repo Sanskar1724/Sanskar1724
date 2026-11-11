@@ -1,4 +1,4 @@
-<img src="assets/wallpaper.svg" width="100%" alt="Sanskar Chandawar, a student coding on a hilltop under a starry twilight sky"/>
+<img src="assets/wallpaper.svg?v=7102cf54" width="100%" alt="Sanskar Chandawar, a student coding on a hilltop under a starry twilight sky"/>
 
 <p align="center">
 I'm an enthusiastic developer who loves exploring new technologies, solving problems, and turning ideas into reality.
@@ -13,14 +13,14 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="https://komarev.com/ghpvc/?username=Sanskar1724&label=Profile%20views&color=fb923c&style=for-the-badge" alt="Profile views"/>
 </p>
 
-<img src="assets/stats.svg" width="100%" alt="35+ public repositories, 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
+<img src="assets/stats.svg?v=3c1355dc" width="100%" alt="35+ public repositories, 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
 
-<img src="assets/h-projects.svg" width="100%" alt="Projects"/>
+<img src="assets/h-projects.svg?v=78521d3e" width="100%" alt="Projects"/>
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<img src="social/card-finsight.svg" width="100%" alt="FinSight AI dashboard and grounded assistant"/>
+<img src="social/card-finsight.svg?v=cd6b21e8" width="100%" alt="FinSight AI dashboard and grounded assistant"/>
 <h3><a href="https://github.com/Sanskar1724/FinSight_AI">FinSight AI</a></h3>
 
 A personal finance workspace for India where the AI calculates first and writes second.
@@ -42,7 +42,7 @@ A personal finance workspace for India where the AI calculates first and writes 
 `React 19` `TypeScript` `FastAPI` `PostgreSQL` `PWA`
 </td>
 <td width="50%" valign="top">
-<a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg" width="100%" alt="MarginGraph, live demo"/></a>
+<a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg?v=cbd7294d" width="100%" alt="MarginGraph, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/MarginGraph">MarginGraph</a></h3>
 
 Recommends add-ons that customers will buy and that keep the retailer profitable.
@@ -67,7 +67,7 @@ Recommends add-ons that customers will buy and that keep the retailer profitable
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg" width="100%" alt="PayTrust AI, live demo"/></a>
+<a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg?v=975437f8" width="100%" alt="PayTrust AI, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/PayTrust_AI">PayTrust AI</a></h3>
 
 Decides whether an AI agent may make a payment: `ALLOW`, `ASK_USER`, or `DENY`. Built for the Razorpay Buildathon.
@@ -81,7 +81,7 @@ Decides whether an AI agent may make a payment: `ALLOW`, `ASK_USER`, or `DENY`. 
 `Python` `FastAPI` `scikit-learn` `Streamlit` `Razorpay`
 </td>
 <td width="50%" valign="top">
-<a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg" width="100%" alt="CampusOps, live demo"/></a>
+<a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg?v=72405afb" width="100%" alt="CampusOps, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps</a></h3>
 
 An academic agent that reads college email, timetables, and documents, then answers on web, Telegram, and email.
@@ -97,18 +97,18 @@ An academic agent that reads college email, timetables, and documents, then answ
 </tr>
 </table>
 
-<img src="assets/h-stack.svg" width="100%" alt="Skills"/>
+<img src="assets/h-stack.svg?v=629b3ac4" width="100%" alt="Skills"/>
 
-<img src="assets/skills.svg" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
+<img src="assets/skills.svg?v=f1a32303" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
 
-<img src="assets/h-explore.svg" width="100%" alt="Exploring next"/>
+<img src="assets/h-explore.svg?v=95f9b32e" width="100%" alt="Exploring next"/>
 
-<img src="assets/explorations.svg" width="100%" alt="Exploring next: agent orchestration, agentic systems, Apache Iceberg, agentic commerce"/>
+<img src="assets/explorations.svg?v=c26ab00c" width="100%" alt="Exploring next: agent orchestration, agentic systems, Apache Iceberg, agentic commerce"/>
 
-<img src="assets/h-activity.svg" width="100%" alt="Activity"/>
+<img src="assets/h-activity.svg?v=75b364dc" width="100%" alt="Activity"/>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green-animate.svg"/>
-  <img src="profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="GitHub contribution graph"/>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg?v=6c303719"/>
+  <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green-animate.svg?v=3c23b1ac"/>
+  <img src="profile-3d-contrib/profile-night-rainbow.svg?v=6c303719" width="100%" alt="GitHub contribution graph"/>
 </picture>

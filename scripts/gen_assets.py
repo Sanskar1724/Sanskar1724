@@ -5,7 +5,9 @@ here is CSS or SMIL animation baked into the SVG itself. No external fonts or
 scripts are used, which keeps the files small and camo-proxy friendly.
 """
 
+import hashlib
 import random
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -502,6 +504,28 @@ def main() -> None:
         ("campusops", card_campus),
     ):
         (SOCIAL / f"card-{name}.svg").write_text(build(), encoding="utf-8")
+    bust_readme_cache()
+
+
+def bust_readme_cache() -> None:
+    """Tag each local image in the README with a hash of its bytes.
+
+    Browsers cache github.com/.../raw/... images, so a regenerated SVG at the
+    same URL can stay stale. A changed file gets a new ?v= and loads fresh.
+    """
+    readme = ROOT / "README.md"
+    text = readme.read_text(encoding="utf-8")
+
+    def tag(match: re.Match) -> str:
+        path = match.group(2)
+        file = ROOT / path
+        if not file.is_file():
+            return match.group(0)
+        digest = hashlib.sha1(file.read_bytes()).hexdigest()[:8]
+        return f"{match.group(1)}{path}?v={digest}{match.group(3)}"
+
+    text = re.sub(r'((?:src|srcset)=")((?:assets|social|profile-3d-contrib)/[^"?]+\.svg)(?:\?v=[0-9a-f]+)?(")', tag, text)
+    readme.write_text(text, encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
