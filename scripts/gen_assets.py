@@ -130,34 +130,60 @@ def wallpaper() -> str:
 
 
 STATS = [
-    ("35+", "public repositories", VIOLET),
-    ("267+", "automated tests in top projects", CYAN),
-    ("11", "public datasets benchmarked", AMBER),
-    ("1", "research paper", GREEN),
+    ("35", "+", "Public repositories", "AI · data · full-stack", "&lt;/&gt;", "GITHUB", VIOLET),
+    ("267", "+", "Automated tests", "across 3 featured projects", "&#10003;", "QUALITY", CYAN),
+    ("11", "", "Datasets benchmarked", "public: finance · retail · fraud", "&#9638;", "RESEARCH", AMBER),
+    ("1", "", "Research paper", "19-page preprint, MarginGraph", "PDF", "PUBLISHED", GREEN),
 ]
 
 
 def stats() -> str:
-    tw, gap = 210, 20
+    """Recruiter-facing impact tiles; each number rolls into place like an odometer."""
+    tw, th, gap, row, dw = 210, 150, 20, 46, 25
     style = (
-        "@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}"
+        "@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}"
         ".tile{opacity:0;animation:up .6s ease-out forwards}"
+        "@keyframes roll{from{transform:translateY(0)}}"
+        ".reel{animation:roll 1.8s cubic-bezier(.2,.8,.2,1) both}"
         "@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}"
         ".p{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}"
     )
     parts = []
-    for i, (value, label, color) in enumerate(STATS):
+    for i, (value, suffix, label, sub, glyph, tag, color) in enumerate(STATS):
         x = i * (tw + gap)
+        num_y = 98
+        reels = []
+        for j, ch in enumerate(value):
+            stop = 10 + int(ch)
+            digits = "".join(
+                f'<tspan x="{x + 20 + j * dw}" y="{num_y + k * row}">{k % 10}</tspan>' for k in range(stop + 1)
+            )
+            reels.append(
+                f'<text class="reel" style="transform:translateY(-{stop * row}px);animation-delay:{.2 + i * .15 + j * .12:.2f}s" '
+                f'font-family="{SANS}" font-size="42" font-weight="800" fill="url(#n{i})">{digits}</text>'
+            )
         parts.append(
+            f'<linearGradient id="n{i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="{color}"/></linearGradient>'
+            f'<radialGradient id="g{i}" cx="1" cy="0" r="1"><stop offset="0" stop-color="{color}" stop-opacity=".22"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></radialGradient>'
+            f'<clipPath id="c{i}"><rect x="{x}" y="{num_y - 40}" width="{tw}" height="{row - 2}"/></clipPath>'
+            f'<clipPath id="t{i}"><rect x="{x}" y="0" width="{tw}" height="{th}" rx="16"/></clipPath>'
             f'<g class="tile" style="animation-delay:{i * .15:.2f}s">'
-            f'<rect x="{x + .5}" y=".5" width="{tw - 1}" height="95" rx="14" fill="{BG}" stroke="{LINE}"/>'
-            f'<rect x="{x + 20}" y="78" width="40" height="3" rx="1.5" fill="{color}"/>'
-            f'<circle class="p" cx="{x + tw - 22}" cy="22" r="4" fill="{color}" style="animation-delay:{i * .5}s"/>'
-            f'<circle cx="{x + tw - 22}" cy="22" r="4" fill="{color}"/>'
-            f'<text x="{x + 20}" y="46" font-family="{SANS}" font-size="32" font-weight="800" fill="{color}">{value}</text>'
-            f'<text x="{x + 20}" y="66" font-family="{SANS}" font-size="13" fill="{MUTED}">{label}</text></g>'
+            f'<rect x="{x}" y="0" width="{tw}" height="{th}" rx="16" fill="{BG}"/>'
+            f'<rect x="{x}" y="0" width="{tw}" height="{th}" rx="16" fill="url(#g{i})"/>'
+            f'<g clip-path="url(#t{i})"><rect x="{x}" y="0" width="{tw}" height="4" fill="{color}"/></g>'
+            f'<rect x="{x + .5}" y=".5" width="{tw - 1}" height="{th - 1}" rx="16" fill="none" stroke="{LINE}"/>'
+            f'<rect x="{x + 18}" y="18" width="34" height="26" rx="8" fill="{color}" fill-opacity=".15" stroke="{color}" stroke-opacity=".55"/>'
+            f'<text x="{x + 35}" y="36" text-anchor="middle" font-family="{MONO}" font-size="11" font-weight="700" fill="{color}">{glyph}</text>'
+            f'<circle class="p" cx="{x + tw - 22}" cy="31" r="3.5" fill="{color}" style="animation-delay:{i * .5}s"/>'
+            f'<circle cx="{x + tw - 22}" cy="31" r="3.5" fill="{color}"/>'
+            f'<text x="{x + tw - 32}" y="35" text-anchor="end" font-family="{MONO}" font-size="10" letter-spacing="1.5" fill="{MUTED}">{tag}</text>'
+            f'<g clip-path="url(#c{i})">{"".join(reels)}</g>'
+            f'<text x="{x + 20 + len(value) * dw}" y="{num_y}" font-family="{SANS}" font-size="34" font-weight="800" fill="{color}">{suffix}</text>'
+            f'<text x="{x + 20}" y="{num_y + 26}" font-family="{SANS}" font-size="14" font-weight="700" fill="{INK}">{label}</text>'
+            f'<text x="{x + 20}" y="{num_y + 44}" font-family="{SANS}" font-size="12" fill="{MUTED}">{sub}</text>'
+            "</g>"
         )
-    return svg(4 * tw + 3 * gap, 96, "35+ repositories, 267+ automated tests, 11 public datasets benchmarked, 1 research paper", "".join(parts), style)
+    return svg(4 * tw + 3 * gap, th, "35+ public repositories, 267+ automated tests, 11 public datasets benchmarked, 1 research paper", "".join(parts), style)
 
 
 SKILLS = [
