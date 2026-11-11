@@ -274,74 +274,57 @@ def skills() -> str:
 
 
 EXPLORING = [
-    # (column, color, [(technology, detail, repo, is_new)])
-    ("AI", VIOLET, [
-        ("Agent harnesses", "swappable tools, providers, fallbacks", "Deepseek-harness", False),
-        ("LLM evals", "task suites, scorers, rubrics", "inspect_ai", True),
-        ("Reasoning on / off", "LFM 1.7B thinking ON vs OFF", "Instant-1.7b", True),
-        ("Multi-agent routing", "router + specialists, -22% tokens", "FinSight", False),
-    ]),
-    ("DATA", CYAN, [
-        ("Multimodal data engine", "images, audio, video as dataframes", "Daft", True),
-        ("Lakehouse", "Delta Lake medallion + Unity Catalog", "Retail Lakehouse", False),
-        ("LLM-assisted data quality", "LLM reads metadata, never rows", "DataPilot", False),
-        ("Hybrid retrieval", "bge-m3 + BM25, nDCG@10 0.410", "FinSight", False),
-    ]),
-    ("FINANCE", AMBER, [
-        ("Agentic payments", "ALLOW / ASK_USER / DENY gate", "PayTrust", False),
-        ("Fraud ML", "IEEE-CIS, time-based split", "PayTrust", False),
-        ("Financial QA", "FinQA · ConvFinQA · TAT-QA", "FinSight", False),
-        ("Margin-aware recsys", "MILP with a 15% margin floor", "MarginGraph", False),
-    ]),
+    # What's next on the learning list: (topic, one-line hook)
+    ("Agent orchestration", "planners, workers, handoffs"),
+    ("Agentic systems", "plan, act, verify loops"),
+    ("Model Context Protocol", "tools and data over MCP"),
+    ("Agent-to-agent (A2A)", "agents calling agents"),
+    ("Context engineering", "what the model sees, when"),
+    ("Agent memory", "long-term, episodic, shared"),
+    ("GraphRAG", "knowledge graphs + retrieval"),
+    ("LLM observability", "traces, cost, regressions"),
+    ("Apache Iceberg", "open table formats"),
+    ("Real-time streaming", "Kafka + Flink pipelines"),
+    ("Data contracts", "schemas as agreements"),
+    ("Semantic layer", "one definition per metric"),
+    ("Agentic commerce", "agents that shop and pay"),
+    ("Account Aggregator", "consented financial data"),
+    ("Graph fraud detection", "rings, mules, link analysis"),
+    ("Explainable credit AI", "a reason for every score"),
 ]
 
 
 def explorations() -> str:
-    full, gap, head, th, tgap = 900, 18, 46, 92, 10
-    cw = (full - gap * 2) // 3
+    cols, gap, full, th = 4, 12, 900, 84
+    tw = (full - gap * (cols - 1)) // cols
+    palette = [VIOLET, CYAN, AMBER, GREEN, PINK]
     style = (
         "@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}"
         ".t{opacity:0;animation:up .55s ease-out forwards}"
-        "@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}"
-        ".p{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}"
-        "@keyframes flow{to{stroke-dashoffset:-16}}.f{stroke-dasharray:3 5;animation:flow 1.4s linear infinite}"
+        "@keyframes spin{to{transform:rotate(360deg)}}"
+        ".s{transform-box:fill-box;transform-origin:center;animation:spin 3s linear infinite}"
+        "@keyframes march{to{stroke-dashoffset:-20}}.d{stroke-dasharray:6 4;animation:march 2.5s linear infinite}"
     )
     parts = []
-    n = 0
-    for c, (column, color, items) in enumerate(EXPLORING):
-        x = c * (cw + gap)
+    for i, (topic, hook) in enumerate(EXPLORING):
+        x, y = (i % cols) * (tw + gap), (i // cols) * (th + gap)
+        color = palette[i % len(palette)]
+        cx, cy = x + tw - 26, y + 26
         parts.append(
-            f'<rect x="{x}" y="0" width="{cw}" height="36" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".45"/>'
-            f'<text x="{x + 16}" y="23" font-family="{SANS}" font-size="14" font-weight="800" letter-spacing="3" fill="{color}">{column}</text>'
-            f'<text x="{x + cw - 16}" y="23" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">{len(items)} topics</text>'
-            f'<path class="f" d="M{x + 14} {head - 6}V{head + len(items) * (th + tgap) - tgap - 10}" stroke="{color}" stroke-opacity=".5"/>'
+            f'<g class="t" style="animation-delay:{i * .05:.2f}s">'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14" fill="{BG}"/>'
+            f'<rect class="d" x="{x + .5}" y="{y + .5}" width="{tw - 1}" height="{th - 1}" rx="14" fill="none" stroke="{color}" stroke-opacity=".45"/>'
+            f'<text x="{x + 16}" y="{y + 26}" font-family="{MONO}" font-size="10.5" letter-spacing="1.5" fill="{color}">NEXT {i + 1:02d}</text>'
+            f'<circle cx="{cx}" cy="{cy}" r="8" fill="none" stroke="{LINE}" stroke-width="2.5"/>'
+            f'<circle class="s" cx="{cx}" cy="{cy}" r="8" fill="none" stroke="{color}" stroke-width="2.5" '
+            f'stroke-dasharray="12 40" stroke-linecap="round" style="animation-delay:-{i * .2:.1f}s"/>'
+            f'<text x="{x + 16}" y="{y + 52}" font-family="{SANS}" font-size="14.5" font-weight="700" fill="{INK}">{topic}</text>'
+            f'<text x="{x + 16}" y="{y + 70}" font-family="{MONO}" font-size="10.5" fill="{MUTED}">{hook}</text>'
+            "</g>"
         )
-        for r, (tech, detail, repo, new) in enumerate(items):
-            y = head + r * (th + tgap)
-            tx = x + 28
-            w = cw - 28
-            repo_w = round(len(repo) * 6.6 + 30)
-            new_badge = (
-                f'<rect x="{tx + w - 56}" y="{y + 12}" width="42" height="18" rx="9" fill="{GREEN}" fill-opacity=".15" stroke="{GREEN}" stroke-opacity=".6"/>'
-                f'<circle class="p" cx="{tx + w - 46}" cy="{y + 21}" r="3" fill="{GREEN}"/><circle cx="{tx + w - 46}" cy="{y + 21}" r="3" fill="{GREEN}"/>'
-                f'<text x="{tx + w - 39}" y="{y + 25}" font-family="{MONO}" font-size="9.5" font-weight="700" fill="{GREEN}">NEW</text>'
-                if new else ""
-            )
-            parts.append(
-                f'<g class="t" style="animation-delay:{n * .07:.2f}s">'
-                f'<circle cx="{x + 14}" cy="{y + 24}" r="5" fill="{BG}" stroke="{color}" stroke-width="2"/>'
-                f'<rect x="{tx}" y="{y}" width="{w}" height="{th}" rx="12" fill="{BG}" stroke="{LINE}"/>'
-                f'<rect x="{tx}" y="{y + 14}" width="3" height="{th - 28}" rx="1.5" fill="{color}"/>'
-                f'<text x="{tx + 16}" y="{y + 26}" font-family="{SANS}" font-size="14.5" font-weight="700" fill="{INK}">{tech}</text>'
-                f'{new_badge}'
-                f'<text x="{tx + 16}" y="{y + 47}" font-family="{MONO}" font-size="10.5" fill="{MUTED}">{detail}</text>'
-                f'<rect x="{tx + 16}" y="{y + 60}" width="{repo_w}" height="20" rx="6" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".35"/>'
-                f'<text x="{tx + 26}" y="{y + 74}" font-family="{MONO}" font-size="10.5" fill="{INK}">&#8627; {repo}</text>'
-                "</g>"
-            )
-            n += 1
-    rows = max(len(items) for *_, items in EXPLORING)
-    return svg(full, head + rows * (th + tgap) - tgap, "Exploring: agent harnesses, LLM evals, reasoning models, multimodal data, lakehouse, agentic payments, fraud ML, financial QA", "".join(parts), style)
+    rows = -(-len(EXPLORING) // cols)
+    return svg(full, rows * th + (rows - 1) * gap,
+               "Exploring next: " + ", ".join(t for t, _ in EXPLORING), "".join(parts), style)
 
 
 ROSE = "#fb7185"
@@ -516,7 +499,7 @@ def main() -> None:
     for filename, number, label in (
         ("h-projects.svg", "01", "PROJECTS"),
         ("h-stack.svg", "02", "SKILLS"),
-        ("h-explore.svg", "03", "EXPLORING"),
+        ("h-explore.svg", "03", "EXPLORING NEXT"),
         ("h-activity.svg", "04", "ACTIVITY"),
     ):
         (ASSETS / filename).write_text(header(number, label), encoding="utf-8")

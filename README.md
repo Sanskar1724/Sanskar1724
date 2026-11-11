@@ -101,9 +101,9 @@ An academic agent that reads college email, timetables, and documents, then answ
 
 <img src="assets/skills.svg" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
 
-<img src="assets/h-explore.svg" width="100%" alt="Exploring"/>
+<img src="assets/h-explore.svg" width="100%" alt="Exploring next"/>
 
-<img src="assets/explorations.svg" width="100%" alt="Exploring in AI: agent harnesses, LLM evals, reasoning on/off, multi-agent routing. Data: multimodal data engines, lakehouse, LLM-assisted data quality, hybrid retrieval. Finance: agentic payments, fraud ML, financial QA, margin-aware recommendations."/>
+<img src="assets/explorations.svg" width="100%" alt="Exploring next: agent orchestration, agentic systems, Model Context Protocol, agent-to-agent, context engineering, agent memory, GraphRAG, LLM observability, Apache Iceberg, real-time streaming, data contracts, semantic layer, agentic commerce, Account Aggregator, graph fraud detection, explainable credit AI"/>
 
 <img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 
