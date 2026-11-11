@@ -22,6 +22,7 @@ I believe in learning by building, improving through challenges, and creating te
 <td width="50%" valign="top">
 <img src="social/card-finsight.svg" width="100%" alt="FinSight AI dashboard and grounded assistant"/>
 <h3><a href="https://github.com/Sanskar1724/FinSight_AI">FinSight AI</a></h3>
+
 A personal finance workspace for India where the AI calculates first and writes second.
 
 🔬 **Research** on five public benchmarks
@@ -43,6 +44,7 @@ A personal finance workspace for India where the AI calculates first and writes 
 <td width="50%" valign="top">
 <a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg" width="100%" alt="MarginGraph, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/MarginGraph">MarginGraph</a></h3>
+
 Recommends add-ons that customers will buy and that keep the retailer profitable.
 
 🔬 **Research** on five real retail datasets
@@ -67,6 +69,7 @@ Recommends add-ons that customers will buy and that keep the retailer profitable
 <td width="50%" valign="top">
 <a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg" width="100%" alt="PayTrust AI, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/PayTrust_AI">PayTrust AI</a></h3>
+
 Decides whether an AI agent may make a payment: `ALLOW`, `ASK_USER`, or `DENY`. Built for the Razorpay Buildathon.
 
 🔬 **Research** on IEEE-CIS fraud data
@@ -80,6 +83,7 @@ Decides whether an AI agent may make a payment: `ALLOW`, `ASK_USER`, or `DENY`. 
 <td width="50%" valign="top">
 <a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg" width="100%" alt="CampusOps, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps</a></h3>
+
 An academic agent that reads college email, timetables, and documents, then answers on web, Telegram, and email.
 
 🔬 **Retrieval**
