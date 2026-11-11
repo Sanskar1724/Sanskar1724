@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 SOCIAL = ROOT / "social"
+RAW = "https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main"
 
 SANS = "'Segoe UI',Inter,Arial,sans-serif"
 MONO = "'JetBrains Mono',Consolas,'Courier New',monospace"
@@ -508,10 +509,12 @@ def main() -> None:
 
 
 def bust_readme_cache() -> None:
-    """Tag each local image in the README with a hash of its bytes.
+    """Point each generated image in the README at a raw URL tagged with a hash of its bytes.
 
-    Browsers cache github.com/.../raw/... images, so a regenerated SVG at the
-    same URL can stay stale. A changed file gets a new ?v= and loads fresh.
+    Relative README images redirect to raw.githubusercontent.com and lose any
+    query string, so browsers keep a stale copy. An absolute raw URL keeps
+    ?v=, and a changed file gets a new URL that loads fresh. The 3D contribution
+    graph is left relative: a workflow rewrites it daily without this script.
     """
     readme = ROOT / "README.md"
     text = readme.read_text(encoding="utf-8")
@@ -522,9 +525,10 @@ def bust_readme_cache() -> None:
         if not file.is_file():
             return match.group(0)
         digest = hashlib.sha1(file.read_bytes()).hexdigest()[:8]
-        return f"{match.group(1)}{path}?v={digest}{match.group(3)}"
+        return f"{match.group(1)}{RAW}/{path}?v={digest}{match.group(3)}"
 
-    text = re.sub(r'((?:src|srcset)=")((?:assets|social|profile-3d-contrib)/[^"?]+\.svg)(?:\?v=[0-9a-f]+)?(")', tag, text)
+    text = re.sub(rf'(src=")(?:{re.escape(RAW)}/)?((?:assets|social)/[^"?]+\.svg)(?:\?v=[0-9a-f]+)?(")', tag, text)
+    text = re.sub(r'((?:src|srcset)="profile-3d-contrib/[^"?]+\.svg)\?v=[0-9a-f]+(")', r"\1\2", text)
     readme.write_text(text, encoding="utf-8", newline="\n")
 
 
