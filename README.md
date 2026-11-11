@@ -13,7 +13,7 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="https://komarev.com/ghpvc/?username=Sanskar1724&label=Profile%20views&color=fb923c&style=for-the-badge" alt="Profile views"/>
 </p>
 
-<img src="assets/stats.svg" width="100%" alt="25+ public repositories, 267+ automated tests, 590k transactions modeled, 1 research paper"/>
+<img src="assets/stats.svg" width="100%" alt="35+ public repositories, 267+ automated tests, 11 public datasets benchmarked, 1 research paper"/>
 
 <img src="assets/h-projects.svg" width="100%" alt="Projects"/>
 
@@ -23,48 +23,79 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="social/card-finsight.svg" width="100%" alt="FinSight AI dashboard and grounded assistant"/>
 <h3><a href="https://github.com/Sanskar1724/FinSight_AI">FinSight AI</a></h3>
 A personal finance workspace for India where the AI calculates first and writes second.
-<br/><br/>🔬 <b>Research:</b> benchmarks on real public data
-<br/>• <b>Routing:</b> bge-m3 reaches 93.4% on Banking77 (vs 65.5%)
-<br/>• <b>Search:</b> nDCG@10 0.410 on FiQA (vs 0.236 for BM25)
-<br/>• <b>Numbers:</b> computing with code lifts FinQA from 48.7% to 71.0%; 82.6% correct when two methods agree
-<br/>• <b>Memory:</b> remembering the conversation lifts ConvFinQA follow-ups from 48% to 63% and doubles fully correct conversations (21% → 42%)
-<br/>• <b>Agents:</b> router + specialists match one agent on TAT-QA (43.3% vs 46.3%, within noise) with 22% fewer tokens
-<br/>🏭 <b>Practice:</b> <code>Decimal</code> finance engine, rate-limited auth, migrations, 77 tests, and CI for lint, types, and build.
-<br/><br/><code>React 19</code> <code>TypeScript</code> <code>FastAPI</code> <code>PostgreSQL</code> <code>PWA</code>
+
+🔬 **Research** on five public benchmarks
+- Computing with code lifts **FinQA from 48.7% to 71.0%**; 82.6% correct when two methods agree
+- Routing with bge-m3 reaches **93.4% on Banking77** (vs 65.5%)
+- Retrieval scores **nDCG@10 0.410 on FiQA** (vs 0.236 for BM25)
+
+<details><summary>Memory and agent results</summary>
+
+- Conversation memory lifts ConvFinQA follow-ups from 48% to 63% and doubles fully correct conversations (21% → 42%)
+- Router + specialists match one agent on TAT-QA (43.3% vs 46.3%, within noise) with 22% fewer tokens
+
+</details>
+
+🏭 **Engineering:** `Decimal` finance engine, rate-limited auth, migrations, 77 tests, CI for lint, types, and build.
+
+`React 19` `TypeScript` `FastAPI` `PostgreSQL` `PWA`
 </td>
 <td width="50%" valign="top">
 <a href="https://huggingface.co/spaces/EquilStable/MarginGraph"><img src="social/card-margingraph.svg" width="100%" alt="MarginGraph, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/MarginGraph">MarginGraph</a></h3>
 Recommends add-ons that customers will buy and that keep the retailer profitable.
-<br/><br/>🔬 <b>Research:</b> LightGBM hits 38.1% Hit@10 on 4,480 real UCI baskets, then holds up on four more public datasets: Ta Feng +8.3 pts, Dunnhumby +9.8, Instacart +4.1 (once past purchases fill the pool first), and a tie on small Olist. LLM rankers tested and documented as a no-go; written up as a 19-page paper.
-<br/>🏭 <b>Practice:</b> a 30-day replay of real checkouts earned +24% add-on profit over the ranker alone (+19% across 5 seeds) with 0 margin-floor breaks vs 164. Cost and stock are simulated. Served through FastAPI with CI, p50 22 ms.
-<br/>📄 <b>Technical paper:</b> <a href="https://github.com/Sanskar1724/MarginGraph/blob/main/paper/main.pdf"><i>MarginGraph: Margin-Aware, Constrained Recommendation of Checkout Add-Ons</i></a> (preprint, 19 pages, <a href="https://github.com/Sanskar1724/MarginGraph/raw/main/paper/main.pdf">PDF</a>)
-<br/><br/><code>Python</code> <code>LightGBM</code> <code>PuLP</code> <code>FastAPI</code> <code>Gradio</code>
+
+🔬 **Research** on five real retail datasets
+- LightGBM hits **38.1% Hit@10** on 4,480 UCI baskets and holds up on Ta Feng, Dunnhumby, and Instacart
+- A 30-day checkout replay earns **+24% add-on profit** over the ranker alone, with 0 margin-floor breaks vs 164
+- 📄 Written up as a 19-page preprint: [*Margin-Aware, Constrained Recommendation of Checkout Add-Ons*](https://github.com/Sanskar1724/MarginGraph/blob/main/paper/main.pdf)
+
+<details><summary>Per-dataset results and caveats</summary>
+
+- Ta Feng +8.3 pts, Dunnhumby +9.8, Instacart +4.1 (once past purchases fill the pool first), a tie on small Olist
+- +19% profit across 5 seeds; cost and stock are simulated
+- LLM rankers were tested and documented as a no-go
+
+</details>
+
+🏭 **Engineering:** MILP optimizer enforces a 15% margin floor, served through FastAPI with CI at p50 22 ms.
+
+`Python` `LightGBM` `PuLP` `FastAPI` `Gradio`
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://paytrustai.streamlit.app"><img src="social/card-paytrust.svg" width="100%" alt="PayTrust AI, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/PayTrust_AI">PayTrust AI</a></h3>
-Decides whether an AI agent may make a payment: <code>ALLOW</code>, <code>ASK_USER</code>, or <code>DENY</code>. Built for the Razorpay Buildathon.
-<br/><br/>🔬 <b>Research:</b> fraud model on IEEE-CIS (590k transactions) with a time-based split; ROC-AUC 0.842, recall 0.823.
-<br/>🏭 <b>Practice:</b> deterministic policy gate, LLM kept advisory-only, HMAC-verified idempotent webhooks, 128 tests.
-<br/><br/><code>Python</code> <code>FastAPI</code> <code>scikit-learn</code> <code>Streamlit</code> <code>Razorpay</code>
+Decides whether an AI agent may make a payment: `ALLOW`, `ASK_USER`, or `DENY`. Built for the Razorpay Buildathon.
+
+🔬 **Research** on IEEE-CIS fraud data
+- Trained on **590k transactions** with a time-based split, never loaded whole
+- **ROC-AUC 0.842, recall 0.823**, with a threshold tool to trade precision for recall
+
+🏭 **Engineering:** deterministic policy gate, LLM kept advisory-only, HMAC-verified idempotent webhooks, 128 tests.
+
+`Python` `FastAPI` `scikit-learn` `Streamlit` `Razorpay`
 </td>
 <td width="50%" valign="top">
 <a href="https://campus-ops-chi.vercel.app"><img src="social/card-campusops.svg" width="100%" alt="CampusOps, live demo"/></a>
 <h3><a href="https://github.com/Sanskar1724/CampusOps">CampusOps</a></h3>
 An academic agent that reads college email, timetables, and documents, then answers on web, Telegram, and email.
-<br/><br/>🔬 <b>Research:</b> hybrid search (embeddings + keywords) with vision OCR across PDFs, photos, and spreadsheets.
-<br/>🏭 <b>Practice:</b> one agent core for every channel, deterministic LLM fallback, JWT auth, Docker, 62 tests.
-<br/><br/><code>Python</code> <code>FastAPI</code> <code>Next.js</code> <code>PostgreSQL</code> <code>pgvector</code>
+
+🔬 **Retrieval**
+- **Hybrid search** (embeddings + keywords) over PDFs, photos, and spreadsheets
+- **Vision OCR** turns timetable photos and portal PDFs into searchable records
+
+🏭 **Engineering:** one agent core for every channel, deterministic LLM fallback, JWT auth, Docker, 62 tests.
+
+`Python` `FastAPI` `Next.js` `PostgreSQL` `pgvector`
 </td>
 </tr>
 </table>
 
 <img src="assets/h-stack.svg" width="100%" alt="Skills"/>
 
-<img src="assets/skills.svg" width="100%" alt="Skills: LLM APIs, RAG, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
+<img src="assets/skills.svg" width="100%" alt="Skills: LLM APIs, RAG, LLM evals, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
 
 <img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 

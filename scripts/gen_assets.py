@@ -130,9 +130,9 @@ def wallpaper() -> str:
 
 
 STATS = [
-    ("25+", "public repositories", VIOLET),
+    ("35+", "public repositories", VIOLET),
     ("267+", "automated tests in top projects", CYAN),
-    ("590k", "transactions modeled", AMBER),
+    ("11", "public datasets benchmarked", AMBER),
     ("1", "research paper", GREEN),
 ]
 
@@ -157,11 +157,11 @@ def stats() -> str:
             f'<text x="{x + 20}" y="46" font-family="{SANS}" font-size="32" font-weight="800" fill="{color}">{value}</text>'
             f'<text x="{x + 20}" y="66" font-family="{SANS}" font-size="13" fill="{MUTED}">{label}</text></g>'
         )
-    return svg(4 * tw + 3 * gap, 96, "25+ repositories, 267+ automated tests, 590k transactions modeled, 1 research paper", "".join(parts), style)
+    return svg(4 * tw + 3 * gap, 96, "35+ repositories, 267+ automated tests, 11 public datasets benchmarked, 1 research paper", "".join(parts), style)
 
 
 SKILLS = [
-    ("AI &amp; LLMs", "AI", VIOLET, ["LLM APIs", "RAG", "ReAct agents", "Fine-tuning", "QLoRA", "PyTorch", "Hugging Face"]),
+    ("AI &amp; LLMs", "AI", VIOLET, ["LLM APIs", "RAG", "LLM evals", "ReAct agents", "Fine-tuning", "QLoRA", "PyTorch", "Hugging Face"]),
     ("DATA ENGINEERING", "DB", CYAN, ["PySpark", "Databricks", "Delta Lake", "SQL", "Data warehousing", "Data quality"]),
     ("SOFTWARE", "&lt;/&gt;", AMBER, ["Python", "TypeScript", "React", "Next.js", "FastAPI", "Java"]),
     ("ML &amp; DELIVERY", "ML", GREEN, ["scikit-learn", "LightGBM", "Streamlit", "PostgreSQL", "Docker", "GitHub Actions"]),
@@ -307,7 +307,7 @@ def card_finsight() -> str:
         f'<text x="392" y="253" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{GREEN}">evidence: 14 rows</text>'
         f'<rect x="466" y="238" width="112" height="22" rx="6" fill="#0f1b2d" stroke="{CYAN}" stroke-opacity=".5"/>'
         f'<text x="522" y="253" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{CYAN}">source: ledger</text></g>'
-        + metrics(["77 tests + CI", "28-question benchmark", "PWA"], AMBER)
+        + metrics(["5 public benchmarks", "FinQA 48.7% → 71.0%", "77 tests + CI"], AMBER)
     )
     return svg(720, 360, "FinSight AI personal finance workspace", body, style)
 
@@ -359,10 +359,10 @@ def card_margin() -> str:
         window("huggingface.co/spaces / MarginGraph", ORANGE, "DEMO")
         + title("MarginGraph", "A RANKER FOR RELEVANCE, AN OPTIMIZER FOR PROFIT", ORANGE)
         + bars
-        + f'<g class="up"><text x="510" y="214" font-family="{SANS}" font-size="52" font-weight="800" fill="{ORANGE}">+14%</text>'
-        f'<text x="512" y="240" font-family="{SANS}" font-size="13" fill="{MUTED}">profit per basket vs ranker</text>'
-        f'<text x="512" y="258" font-family="{SANS}" font-size="11" fill="{MUTED}" fill-opacity=".7">(simulated cost and stock)</text></g>'
-        + metrics(["Hit@10 38.1%", "0 margin-floor breaks", "research paper"], ORANGE)
+        + f'<g class="up"><text x="510" y="214" font-family="{SANS}" font-size="52" font-weight="800" fill="{ORANGE}">+24%</text>'
+        f'<text x="512" y="240" font-family="{SANS}" font-size="13" fill="{MUTED}">add-on profit vs ranker</text>'
+        f'<text x="512" y="258" font-family="{SANS}" font-size="11" fill="{MUTED}" fill-opacity=".7">(30-day replay, simulated cost)</text></g>'
+        + metrics(["Hit@10 38.1%", "5 real datasets", "0 vs 164 floor breaks", "19-page paper"], ORANGE)
     )
     return svg(720, 360, "MarginGraph margin-aware recommendations", body, style)
 
