@@ -276,7 +276,7 @@ def skills() -> str:
 EXPLORING = [
     # What's next on the learning list: (topic, one-line hook)
     ("Agent orchestration", "planners, workers, handoffs"),
-    ("Model Context Protocol", "tools and data over MCP"),
+    ("Agentic systems", "plan, act, verify loops"),
     ("Apache Iceberg", "open lakehouse tables"),
     ("Agentic commerce", "agents that shop and pay"),
 ]
