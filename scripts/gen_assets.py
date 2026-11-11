@@ -276,26 +276,14 @@ def skills() -> str:
 EXPLORING = [
     # What's next on the learning list: (topic, one-line hook)
     ("Agent orchestration", "planners, workers, handoffs"),
-    ("Agentic systems", "plan, act, verify loops"),
     ("Model Context Protocol", "tools and data over MCP"),
-    ("Agent-to-agent (A2A)", "agents calling agents"),
-    ("Context engineering", "what the model sees, when"),
-    ("Agent memory", "long-term, episodic, shared"),
-    ("GraphRAG", "knowledge graphs + retrieval"),
-    ("LLM observability", "traces, cost, regressions"),
-    ("Apache Iceberg", "open table formats"),
-    ("Real-time streaming", "Kafka + Flink pipelines"),
-    ("Data contracts", "schemas as agreements"),
-    ("Semantic layer", "one definition per metric"),
+    ("Apache Iceberg", "open lakehouse tables"),
     ("Agentic commerce", "agents that shop and pay"),
-    ("Account Aggregator", "consented financial data"),
-    ("Graph fraud detection", "rings, mules, link analysis"),
-    ("Explainable credit AI", "a reason for every score"),
 ]
 
 
 def explorations() -> str:
-    cols, gap, full, th = 4, 12, 900, 84
+    cols, gap, full, th = 4, 12, 900, 92
     tw = (full - gap * (cols - 1)) // cols
     palette = [VIOLET, CYAN, AMBER, GREEN, PINK]
     style = (

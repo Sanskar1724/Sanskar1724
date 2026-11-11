@@ -103,7 +103,7 @@ An academic agent that reads college email, timetables, and documents, then answ
 
 <img src="assets/h-explore.svg" width="100%" alt="Exploring next"/>
 
-<img src="assets/explorations.svg" width="100%" alt="Exploring next: agent orchestration, agentic systems, Model Context Protocol, agent-to-agent, context engineering, agent memory, GraphRAG, LLM observability, Apache Iceberg, real-time streaming, data contracts, semantic layer, agentic commerce, Account Aggregator, graph fraud detection, explainable credit AI"/>
+<img src="assets/explorations.svg" width="100%" alt="Exploring next: agent orchestration, Model Context Protocol, Apache Iceberg, agentic commerce"/>
 
 <img src="assets/h-activity.svg" width="100%" alt="Activity"/>
 
