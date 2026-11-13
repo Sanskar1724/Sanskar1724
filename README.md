@@ -95,6 +95,22 @@ An academic agent that reads college email, timetables, and documents, then answ
 `Python` `FastAPI` `Next.js` `PostgreSQL` `pgvector`
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top">
+<h3><a href="https://github.com/Sanskar1724/LLM-Evals-Guardrails-Handbook">LLM Evals, Guardrails and Agent Harness Handbook</a></h3>
+
+A free study handbook in simple English for students: 33 chapters with diagrams, runnable code, and revision questions with answers.
+
+📘 **Three parts**
+- [**Evaluations**](https://github.com/Sanskar1724/LLM-Evals-Guardrails-Handbook/blob/main/evaluations/01-why-evaluate.md): metrics, LLM-as-judge, RAG and agent evals, test sets, benchmarks and their limits
+- [**Guardrails**](https://github.com/Sanskar1724/LLM-Evals-Guardrails-Handbook/blob/main/guardrails/01-what-are-guardrails.md): prompt injection, PII, moderation, grounding, output validation, the OWASP Top 10
+- [**Agent harness**](https://github.com/Sanskar1724/LLM-Evals-Guardrails-Handbook/blob/main/harness/01-what-is-an-agent-harness.md): the agent loop, tools, context engineering, memory, sub-agents, sandboxing
+
+🏗️ **Engineering:** 33 code examples that run on a laptop with no API key, a guarded RAG app and a mini agent harness with their own tests, about 150 checked sources.
+
+`Python` `LLM evals` `Guardrails` `Agents` `Mermaid`
+</td>
+</tr>
 </table>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-stack.svg?v=629b3ac4" width="100%" alt="Skills"/>
