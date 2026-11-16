@@ -113,15 +113,25 @@ A free study handbook in simple English for students: 33 chapters with diagrams,
 </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-stack.svg?v=629b3ac4" width="100%" alt="Skills"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-opensource.svg?v=c153eaf8" width="100%" alt="Open source"/>
+
+Code I've contributed to widely used AI and data projects, reviewed by their maintainers.
+
+| Project | What I built | Status |
+|---|---|---|
+| **[Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai)**<br><sub>UK AI Security Institute's LLM evaluation framework</sub> | Made the log-analysis dataframes (`samples_df`, `messages_df`, `events_df`) ready for pandas 3 and 4 by removing a deprecated in-place call, with a regression test for serial and parallel runs. | ✅ **Merged**<br>[#6383](https://github.com/UKGovernmentBEIS/inspect_ai/pull/6383) |
+| **[🤗 Transformers](https://github.com/huggingface/transformers)**<br><sub>Hugging Face · 169k ★</sub> | Ported **FlexGlue**, a new image keypoint-matching model: config, model, two image processors, weight conversion, docs and 184 tests (~3.5k lines). It matches the original model to within 0.00012 px. | 🔍 In review<br>[#50777](https://github.com/huggingface/transformers/pull/50777) |
+| **[Daft](https://github.com/Eventual-Inc/Daft)**<br><sub>Distributed DataFrame engine · 5.8k ★</sub> | Added an Arrow-native **ADBC** backend to `read_sql` and `write_sql` for PostgreSQL and SQLite, tested on the local and Ray runners. | 🔍 In review<br>[#7710](https://github.com/Eventual-Inc/Daft/pull/7710), [#7711](https://github.com/Eventual-Inc/Daft/pull/7711) |
+
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-stack.svg?v=71620a48" width="100%" alt="Skills"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/skills.svg?v=f1a32303" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-explore.svg?v=95f9b32e" width="100%" alt="Exploring next"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-explore.svg?v=afb9bf55" width="100%" alt="Exploring next"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/explorations.svg?v=c26ab00c" width="100%" alt="Exploring next: agent orchestration, agentic systems, Apache Iceberg, agentic commerce"/>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-activity.svg?v=75b364dc" width="100%" alt="Activity"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-activity.svg?v=8c3c245c" width="100%" alt="Activity"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>

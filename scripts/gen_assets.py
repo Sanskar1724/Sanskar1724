@@ -489,9 +489,10 @@ def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for filename, number, label in (
         ("h-projects.svg", "01", "PROJECTS"),
-        ("h-stack.svg", "02", "SKILLS"),
-        ("h-explore.svg", "03", "EXPLORING NEXT"),
-        ("h-activity.svg", "04", "ACTIVITY"),
+        ("h-opensource.svg", "02", "OPEN SOURCE"),
+        ("h-stack.svg", "03", "SKILLS"),
+        ("h-explore.svg", "04", "EXPLORING NEXT"),
+        ("h-activity.svg", "05", "ACTIVITY"),
     ):
         (ASSETS / filename).write_text(header(number, label), encoding="utf-8")
     (ASSETS / "wallpaper.svg").write_text(wallpaper(), encoding="utf-8")
