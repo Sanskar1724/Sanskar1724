@@ -13,7 +13,7 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="https://komarev.com/ghpvc/?username=Sanskar1724&label=Profile%20views&color=fb923c&style=for-the-badge" alt="Profile views"/>
 </p>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=3c1355dc" width="100%" alt="35+ public repositories, 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=cfee48d7" width="100%" alt="Code contributed to open-source projects with 250k+ stars, 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-projects.svg?v=78521d3e" width="100%" alt="Projects"/>
 
@@ -97,7 +97,7 @@ An academic agent that reads college email, timetables, and documents, then answ
 </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-opensource.svg?v=c153eaf8" width="100%" alt="Open source"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-opensource.svg?v=e27d06c0" width="100%" alt="Open source"/>
 
 Code I've contributed to widely used AI and data projects, reviewed by their maintainers.
 
@@ -108,15 +108,15 @@ Code I've contributed to widely used AI and data projects, reviewed by their mai
 | **[LlamaFactory](https://github.com/hiyouga/LlamaFactory)**<br><sub>LLM fine-tuning framework · 76k ★</sub> | Added live training telemetry to the new v1 trainer: elapsed and remaining time, seconds per step and tokens per second in every log entry, plus a saved end-of-run summary, so runs and hardware setups can be compared automatically. Unit and end-to-end tests included. | 🔍 In review<br>[#11001](https://github.com/hiyouga/LlamaFactory/pull/11001) |
 | **[Daft](https://github.com/Eventual-Inc/Daft)**<br><sub>Distributed DataFrame engine · 5.8k ★</sub> | Added an Arrow-native **ADBC** backend to `read_sql` and `write_sql` for PostgreSQL and SQLite, tested on the local and Ray runners. | 🔍 In review<br>[#7710](https://github.com/Eventual-Inc/Daft/pull/7710), [#7711](https://github.com/Eventual-Inc/Daft/pull/7711) |
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-stack.svg?v=71620a48" width="100%" alt="Skills"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-stack.svg?v=e37bdb6b" width="100%" alt="Skills"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/skills.svg?v=f1a32303" width="100%" alt="Skills: LLM evals, RAG, LLM APIs, PyTorch, LightGBM, PySpark, Databricks, Python, TypeScript, React, FastAPI, Docker and more"/>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-explore.svg?v=afb9bf55" width="100%" alt="Exploring next"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-explore.svg?v=3fab2940" width="100%" alt="Exploring next"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/explorations.svg?v=c26ab00c" width="100%" alt="Exploring next: agent orchestration, agentic systems, Apache Iceberg, agentic commerce"/>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-activity.svg?v=8c3c245c" width="100%" alt="Activity"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-activity.svg?v=a43fcfc9" width="100%" alt="Activity"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
