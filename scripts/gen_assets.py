@@ -133,7 +133,7 @@ def wallpaper() -> str:
 
 
 STATS = [
-    ("250", "k+", "OSS stars contributed to", "Transformers · LlamaFactory · +2", "&lt;/&gt;", "OPEN SOURCE", VIOLET),
+    ("5", "", "Open-source PRs", "1 merged · 4 in review", "&lt;/&gt;", "OPEN SOURCE", VIOLET),
     ("4", "", "Live demos", "on Vercel, Streamlit &amp; HF", "&#9654;", "SHIPPED", CYAN),
     ("11", "", "Datasets benchmarked", "public: finance · retail · fraud", "&#9638;", "RESEARCH", AMBER),
     ("1", "", "Research paper", "19-page preprint, MarginGraph", "PDF", "PUBLISHED", GREEN),
@@ -186,7 +186,7 @@ def stats() -> str:
             f'<text x="{x + 20}" y="{num_y + 44}" font-family="{SANS}" font-size="12" fill="{MUTED}">{sub}</text>'
             "</g>"
         )
-    return svg(4 * tw + 3 * gap, th, "Code contributed to open-source projects with 250k+ stars, 4 live demos, 11 public datasets benchmarked, 1 research paper", "".join(parts), style)
+    return svg(4 * tw + 3 * gap, th, "5 open-source pull requests (1 merged, 4 in review), 4 live demos, 11 public datasets benchmarked, 1 research paper", "".join(parts), style)
 
 
 SKILLS = [

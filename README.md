@@ -13,7 +13,7 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="https://komarev.com/ghpvc/?username=Sanskar1724&label=Profile%20views&color=fb923c&style=for-the-badge" alt="Profile views"/>
 </p>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=cfee48d7" width="100%" alt="Code contributed to open-source projects with 250k+ stars, 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=deef04e6" width="100%" alt="5 open-source pull requests (1 merged, 4 in review), 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-projects.svg?v=78521d3e" width="100%" alt="Projects"/>
 
