@@ -13,7 +13,7 @@ I believe in learning by building, improving through challenges, and creating te
 <img src="https://komarev.com/ghpvc/?username=Sanskar1724&label=Profile%20views&color=fb923c&style=for-the-badge" alt="Profile views"/>
 </p>
 
-<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=e6bc446c" width="100%" alt="8 open-source pull requests (2 merged, 6 in review), 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
+<img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/stats.svg?v=e6bc446c" width="100%" alt="8 open-source pull requests (3 merged, 5 in review), 4 live demos, 11 public datasets benchmarked, 1 research paper"/>
 
 <img src="https://raw.githubusercontent.com/Sanskar1724/Sanskar1724/main/assets/h-projects.svg?v=78521d3e" width="100%" alt="Projects"/>
 
@@ -105,13 +105,13 @@ Code I've contributed to widely used AI and data projects, reviewed by their mai
 |---|---|---|
 | **[LightRAG](https://github.com/HKUDS/LightRAG)**<br><sub>Graph-based RAG framework · 40.8k ★</sub> | Fixed table chunking for RAG: when a large HTML table is split at row boundaries, merged (`rowspan`) cells are now carried into every chunk, so later rows keep their columns. Hardened against malformed and hostile HTML over four review rounds with the maintainer. | ✅ **Merged**<br>[#4610](https://github.com/HKUDS/LightRAG/pull/4610) |
 | **[Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai)**<br><sub>UK AI Security Institute's LLM evaluation framework</sub> | Made the log-analysis dataframes (`samples_df`, `messages_df`, `events_df`) ready for pandas 3 and 4 by removing a deprecated in-place call, with a regression test for serial and parallel runs. | ✅ **Merged**<br>[#6383](https://github.com/UKGovernmentBEIS/inspect_ai/pull/6383) |
+| **[Docling](https://github.com/docling-project/docling/issues/5533#event-37095674190)**<br><sub>Document conversion for AI · 70.9k ★</sub> | Made Excel Accounting and non-dollar currency formats (€, £, ₹ and locale tags) render the way Excel shows them instead of as raw numbers, and patched a missing separator in openpyxl's built-in Accounting format. | ✅ **Merged**<br>[#5534](https://github.com/docling-project/docling/pull/5534) |
 
 <details>
-<summary><b>🔍 In review: 6 pull requests</b> (click to expand)</summary>
+<summary><b>🔍 In review: 5 pull requests</b> (click to expand)</summary>
 
 | Project | What I built | Status |
 |---|---|---|
-| **[Docling](https://github.com/docling-project/docling)**<br><sub>Document conversion for AI · 70.9k ★</sub> | Made Excel Accounting and non-dollar currency formats (€, £, ₹ and locale tags) render the way Excel shows them instead of as raw numbers, and patched a missing separator in openpyxl's built-in Accounting format. | 🔍 In review<br>[#5534](https://github.com/docling-project/docling/pull/5534) |
 | **[Haystack](https://github.com/deepset-ai/haystack)**<br><sub>deepset LLM framework · 27k ★</sub> | Fixed `XLSXToDocument` writing date-only Excel cells with a fake `00:00:00` time, keeping `skiprows`/`usecols` alignment and hyperlinks intact. | 🔍 In review<br>[#13870](https://github.com/deepset-ai/haystack/pull/13870) |
 | **[🤗 Transformers](https://github.com/huggingface/transformers)**<br><sub>Hugging Face · 169k ★</sub> | Ported **FlexGlue**, a new image keypoint-matching model: config, model, two image processors, weight conversion, docs and 184 tests (~3.5k lines). It matches the original model to within 0.00012 px. | 🔍 In review<br>[#50777](https://github.com/huggingface/transformers/pull/50777) |
 | **[LlamaFactory](https://github.com/hiyouga/LlamaFactory)**<br><sub>LLM fine-tuning framework · 76k ★</sub> | Added live training telemetry to the new v1 trainer: elapsed and remaining time, seconds per step and tokens per second in every log entry, plus a saved end-of-run summary, so runs and hardware setups can be compared automatically. Unit and end-to-end tests included. | 🔍 In review<br>[#11001](https://github.com/hiyouga/LlamaFactory/pull/11001) |
